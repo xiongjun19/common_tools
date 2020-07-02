@@ -1,0 +1,8 @@
+.idea/
+__pycache__
+*.pyc
+*.pth
+*.swp
+/__pycache__/*
+test_not_commit
+test_not_commit/*
