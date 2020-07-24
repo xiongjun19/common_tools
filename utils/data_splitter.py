@@ -4,7 +4,7 @@
 from sklearn.model_selection import StratifiedShuffleSplit
 
 
-def strat_field_split(X_arr, y_arr, rand_state, test_size=0.1):
+def strat_field_split(x_arr, y_arr, rand_state, test_size=0.1):
     sss = StratifiedShuffleSplit(n_splits=1, test_size=test_size, random_state=rand_state)
     res = sss.split(x_arr, y_arr)
     train_x, train_y = None, None
