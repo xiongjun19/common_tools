@@ -1,6 +1,7 @@
 # coding=utf8
 
 import os
+import shutil
 
 
 def mk_data_folder():
@@ -66,6 +67,10 @@ def get_abs_path(f_path):
         return f_path
     res_path = os.path.join(get_project_path(), f_path)
     return res_path
+
+
+def mv(org_path, dst_path):
+    shutil.move(org_path, dst_path)
 
 
 if __name__ == "__main__":
