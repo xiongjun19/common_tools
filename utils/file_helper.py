@@ -37,5 +37,38 @@ def get_conf_file(file_name):
     return os.path.join(cur_dir, os.pardir, "conf", file_name)
 
 
+def get_project_path():
+    cur_dir, _ = os.path.split(__file__)
+    return os.path.join(cur_dir, os.pardir, os.pardir)
+
+
+def get_real_path(f_path):
+    """
+    本函数主要是为了找到文件的地址而构建的
+    :param f_path: 目标文件地址
+    :return:
+    """
+    if os.path.exists(f_path):
+        return f_path
+    res_path = os.path.abspath(f_path)
+    if os.path.exists(res_path):
+        return res_path
+    res_path = os.path.join(get_project_path(), f_path)
+    if os.path.exists(res_path):
+        return res_path
+    return f_path
+
+
+def get_abs_path(f_path):
+    if os.path.exists(f_path):
+        return f_path
+    if os.path.isabs(f_path):
+        return f_path
+    res_path = os.path.join(get_project_path(), f_path)
+    return res_path
+
+
 if __name__ == "__main__":
-    print(("data_folder", get_data_folder()))
+    print(("project_path", get_project_path()))
+    print(os.listdir(get_project_path()))
+
