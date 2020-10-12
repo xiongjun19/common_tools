@@ -74,6 +74,6 @@ def mv(org_path, dst_path):
 
 
 if __name__ == "__main__":
-    print(("project_path", get_project_path()))
+    print("project_path", get_project_path())
     print(os.listdir(get_project_path()))
 

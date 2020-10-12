@@ -69,6 +69,99 @@ def cut_sentence(sen):
     return res
 
 
+def remove_repeat(text):
+    pre_arr = _get_pre_arr(text)
+    del_idxs = _get_del_ids(pre_arr)
+    res_text = []
+    for i, ch in enumerate(text):
+        if i not in del_idxs:
+            res_text.append(ch)
+    return "".join(res_text)
+
+
+def _get_pre_arr(text):
+    res = []
+    pre_dict = dict()
+    for i, ch in enumerate(text):
+        pre_pos = pre_dict.get(ch, -1)
+        res.append(pre_pos)
+        pre_dict[ch] = i
+    return res
+
+
+def _get_del_ids(pre_arr):
+    res = set()
+    tmp_del = []
+    tmp_pre = -1
+    for i, idx in enumerate(pre_arr):
+        if idx >= 0:
+            if tmp_pre == -1:
+                tmp_pre = i
+                tmp_del.append(idx)
+            else:
+                # 第一步判断是否是同步
+                if not _is_consective(idx, tmp_del):
+                    # 不同步
+                    tmp_del = []
+                    tmp_pre = i
+                tmp_del.append(idx)
+
+            if idx == tmp_pre - 1:
+                res.update(tmp_del)
+                tmp_pre = -1
+                tmp_del = []
+        else:
+            tmp_del = []
+            tmp_pre = -1
+    return res
+
+
+def _is_consective(elem, _arr):
+    if len(_arr) < 1:
+        return True
+    if _arr[-1] + 1 == elem:
+        return True
+    return False
+
+
+sub_en_sen_pat = re.compile(r'([,，\n.]+)')
+
+
+def split_sub_sen(sen):
+    if sen is None:
+        return None
+    sub_arr = re.split(sub_en_sen_pat, sen)
+    if len(sub_arr) % 2 != 0:
+        sub_arr.append("")
+    a1 = sub_arr[::2]
+    a2 = sub_arr[1::2]
+    x = zip(a1, a2)
+    res = ["".join(elem) for elem in x]
+    return res
+
+
+upper_pat = re.compile(r'^[A-Z.]+$')
+
+def preprocess_eng(str_):
+    """
+    本文将英文的句子处了全部是是大写的外，都改写为小写；
+    """
+    tmp_arr = []
+    words = str_.split()
+    for word in words:
+        if is_all_upper(word):
+            tmp_arr.append(word)
+        else:
+            tmp_arr.append(word.lower())
+    return " ".join(tmp_arr)
+
+
+def is_all_upper(word):
+    if re.match(upper_pat, word):
+        return True
+    return False
+
+
 if __name__ == "__main__":
     test_str = "“凯尔啊、算了吧！！那男人根本不行！除了动动腰部之外，别的什么都不会。如果他有你这么棒的技巧，我才要考虑让他当我的男朋友。” 他是我的好朋友。 他很牛？"
     sens = cut_sentence(test_str)
