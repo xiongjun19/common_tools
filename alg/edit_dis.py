@@ -18,7 +18,7 @@ class Solution(object):
             dist_arr[0][j] = j
 
         for i in range(1, l1+1):
-            for j in range(l2+1):
+            for j in range(1, l2+1):
                 self._calc_dist(word1, word2, dist_arr, i, j)
         return int(dist_arr[l1][l2])
 
