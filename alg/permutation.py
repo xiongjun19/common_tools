@@ -29,10 +29,30 @@ def backtrack(arr, path, visited, res):
 
 
 def permutation2(arr):
-    pass
+    sorted_arr = sorted(arr)
+    res = []
+    visited = [False] * len(arr)
+    tmp_path = []
+    trace_back(res, visited, tmp_path, sorted_arr)
+    return res
+
+
+def trace_back(res, visited, tmp_path, arr):
+    if len(tmp_path) == len(arr):
+        res.append(tmp_path.copy())
+        return
+    for i in range(len(arr)):
+        if i not in visited:
+            if i > 0 and arr[i-1] == arr[i] and not visited[i-1]:
+                continue
+            tmp_path.append(arr[i])
+            visited[i] = True
+            trace_back(res, visited, tmp_path, arr)
+            tmp_path.pop()
+            visited[i] = False
 
 
 if __name__ == "__main__":
-    test_arr = [1, 2, 2, 3]
+    test_arr = [1, 2, 2]
     res = permutation(test_arr)
     print(res)
