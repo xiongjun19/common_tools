@@ -58,7 +58,7 @@ class Solution(object):
     def _is_confusion(self, tmp_path, digit_dict):
         begin = 0
         end = len(tmp_path) - 1
-        while (begin <= end):
+        while begin <= end:
             if tmp_path[begin] != digit_dict[tmp_path[end]]:
                 return True
             begin += 1

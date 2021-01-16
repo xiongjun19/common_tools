@@ -7,7 +7,7 @@ sen_split_pat = re.compile(r"([\n]+)")
 
 speech_begin = "“"
 speech_end = "”"
-sen_seps = {"。", "？", "！"}
+sen_seps = {"。", "？", "！", "\n"}
 
 
 def is_hit_suspect(text, sus_words):
@@ -61,10 +61,10 @@ def cut_sentence(sen):
                 tmp_sen = ""
         if ch in sen_seps:
             if not is_con_begin:
-                if len(tmp_sen) > 1:
+                if len(tmp_sen) >= 1:
                     res.append(tmp_sen)
                 tmp_sen = ""
-    if len(tmp_sen) > 1:
+    if len(tmp_sen) >= 1:
         res.append(tmp_sen)
     return res
 
@@ -163,7 +163,8 @@ def is_all_upper(word):
 
 
 if __name__ == "__main__":
-    test_str = "“凯尔啊、算了吧！！那男人根本不行！除了动动腰部之外，别的什么都不会。如果他有你这么棒的技巧，我才要考虑让他当我的男朋友。” 他是我的好朋友。 他很牛？"
+    test_str = "“凯尔啊、算了吧！！那男人根本不行！除了动动腰部之外，别的什么都不会。如果他有你这么棒的技巧，我才要考虑让他当我的男朋友。” 他是我的好朋友。\n 他很牛？"
+    # test_str = "凯尔啊、算了吧！！那男人根本不行！除了动动腰部之外，别的什么都不会。如果他有你这么棒的技巧，我才要考虑让他当我的男朋友。 他是我的好朋友。\n 他很牛？"
     sens = cut_sentence(test_str)
     for sen in sens:
         print(sen)
