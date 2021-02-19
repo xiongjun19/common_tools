@@ -73,6 +73,30 @@ def mv(org_path, dst_path):
     shutil.move(org_path, dst_path)
 
 
+def mk_dir(dir_name):
+    os.makedirs(dir_name, exist_ok=True)
+
+
+def rm_f(dir_or_file):
+    if os.path.exists(dir_or_file):
+        shutil.rmtree(dir_or_file)
+
+
+def rename(src, dst):
+    os.rename(src, dst)
+
+
+def copy(src, dst):
+    shutil.copy(src, dst)
+
+def get_dir(f_path):
+    """
+    :param f_path:
+    :return:
+    """
+    return os.path.dirname(f_path)
+
+
 if __name__ == "__main__":
     print("project_path", get_project_path())
     print(os.listdir(get_project_path()))
