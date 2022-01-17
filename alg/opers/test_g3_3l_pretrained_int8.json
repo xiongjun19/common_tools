@@ -1,0 +1,10707 @@
+{
+  "Shape_0" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "input_ids" : [
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "49" : [
+        2
+      ]
+    }
+  },
+  "Constant_1" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_1_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "50" : []
+    }
+  },
+  "Gather_2" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "49" : [
+        2
+      ],
+      "50" : []
+    },
+    "outputs" : {
+      "51" : []
+    }
+  },
+  "Shape_3" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "input_ids" : [
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "52" : [
+        2
+      ]
+    }
+  },
+  "Constant_4" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_4_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "53" : []
+    }
+  },
+  "Gather_5" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "52" : [
+        2
+      ],
+      "53" : []
+    },
+    "outputs" : {
+      "54" : []
+    }
+  },
+  "Unsqueeze_6" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "54" : []
+    },
+    "outputs" : {
+      "57" : [
+        1
+      ]
+    }
+  },
+  "Concat_7" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "814" : [
+        1
+      ],
+      "57" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "58" : [
+        2
+      ]
+    }
+  },
+  "Reshape_8" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "input_ids" : [
+        1,
+        128
+      ],
+      "58" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "59" : [
+        1,
+        128
+      ]
+    }
+  },
+  "Shape_9" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "59" : [
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "60" : [
+        2
+      ]
+    }
+  },
+  "Constant_10" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_10_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "61" : []
+    }
+  },
+  "Gather_11" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "60" : [
+        2
+      ],
+      "61" : []
+    },
+    "outputs" : {
+      "62" : []
+    }
+  },
+  "Unsqueeze_12" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "54" : []
+    },
+    "outputs" : {
+      "65" : [
+        1
+      ]
+    }
+  },
+  "Concat_13" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "815" : [
+        1
+      ],
+      "65" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "66" : [
+        2
+      ]
+    }
+  },
+  "Reshape_14" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "type_ids" : [
+        1,
+        128
+      ],
+      "66" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "67" : [
+        1,
+        128
+      ]
+    }
+  },
+  "Constant_15" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_15_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "68" : []
+    }
+  },
+  "Add_16" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "54" : [],
+      "68" : []
+    },
+    "outputs" : {
+      "69" : []
+    }
+  },
+  "Cast_17" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 7 type: INT "
+    ],
+    "inputs" : {
+      "69" : []
+    },
+    "outputs" : {
+      "73" : []
+    }
+  },
+  "Range_18" : {
+    "op_type" : "Range",
+    "attribute" : [],
+    "inputs" : {
+      "816" : [],
+      "73" : [],
+      "817" : []
+    },
+    "outputs" : {
+      "75" : [
+        128
+      ]
+    }
+  },
+  "Unsqueeze_19" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "75" : [
+        128
+      ]
+    },
+    "outputs" : {
+      "76" : [
+        1,
+        128
+      ]
+    }
+  },
+  "Unsqueeze_20" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "54" : []
+    },
+    "outputs" : {
+      "79" : [
+        1
+      ]
+    }
+  },
+  "Concat_21" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "818" : [
+        1
+      ],
+      "79" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "80" : [
+        2
+      ]
+    }
+  },
+  "Reshape_22" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "76" : [
+        1,
+        128
+      ],
+      "80" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "81" : [
+        1,
+        128
+      ]
+    }
+  },
+  "Unsqueeze_23" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "62" : []
+    },
+    "outputs" : {
+      "83" : [
+        1
+      ]
+    }
+  },
+  "Concat_24" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "83" : [
+        1
+      ],
+      "819" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "85" : [
+        2
+      ]
+    }
+  },
+  "Reshape_25" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "att_mask" : [
+        1,
+        128
+      ],
+      "85" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "86" : [
+        1,
+        128
+      ]
+    }
+  },
+  "Unsqueeze_26" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 1 type: INTS "
+    ],
+    "inputs" : {
+      "86" : [
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "87" : [
+        1,
+        1,
+        128
+      ]
+    }
+  },
+  "Unsqueeze_27" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 2 type: INTS "
+    ],
+    "inputs" : {
+      "87" : [
+        1,
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "88" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    }
+  },
+  "Cast_28" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 1 type: INT "
+    ],
+    "inputs" : {
+      "88" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "89" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    }
+  },
+  "Constant_29" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_29_attr::value\"   raw_data: \"\\000\\000\\200?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "90" : []
+    }
+  },
+  "Sub_30" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "90" : [],
+      "89" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "91" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    }
+  },
+  "Constant_31" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_31_attr::value\"   raw_data: \"\\000@\\034\\306\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "92" : []
+    }
+  },
+  "Mul_32" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "91" : [
+        1,
+        1,
+        1,
+        128
+      ],
+      "92" : []
+    },
+    "outputs" : {
+      "93" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    }
+  },
+  "Gather_33" : {
+    "op_type" : "Gather",
+    "attribute" : [],
+    "inputs" : {
+      "model.wte.weight" : [
+        50257,
+        12288
+      ],
+      "59" : [
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "94" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Gather_34" : {
+    "op_type" : "Gather",
+    "attribute" : [],
+    "inputs" : {
+      "model.wpe.weight" : [
+        2048,
+        12288
+      ],
+      "81" : [
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "95" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_35" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "94" : [
+        1,
+        128,
+        12288
+      ],
+      "95" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "96" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Gather_36" : {
+    "op_type" : "Gather",
+    "attribute" : [],
+    "inputs" : {
+      "model.wte.weight" : [
+        50257,
+        12288
+      ],
+      "67" : [
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "97" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_37" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "96" : [
+        1,
+        128,
+        12288
+      ],
+      "97" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "98" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_38" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "98" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "99" : [
+        3
+      ]
+    }
+  },
+  "Constant_39" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_39_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "100" : [
+        1
+      ]
+    }
+  },
+  "Constant_40" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_40_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "101" : [
+        1
+      ]
+    }
+  },
+  "Constant_41" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_41_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "102" : [
+        1
+      ]
+    }
+  },
+  "Slice_42" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "99" : [
+        3
+      ],
+      "101" : [
+        1
+      ],
+      "102" : [
+        1
+      ],
+      "100" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "103" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_43" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "103" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "104" : []
+    }
+  },
+  "ReduceMean_44" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "98" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "105" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sub_45" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "98" : [
+        1,
+        128,
+        12288
+      ],
+      "105" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "106" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Constant_46" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_46_attr::value\"   raw_data: \"\\000\\000\\000@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "107" : []
+    }
+  },
+  "Pow_47" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "106" : [
+        1,
+        128,
+        12288
+      ],
+      "107" : []
+    },
+    "outputs" : {
+      "108" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_48" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "108" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "109" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Constant_49" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_49_attr::value\"   raw_data: \"\\254\\305\\'7\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "110" : []
+    }
+  },
+  "Add_50" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "109" : [
+        1,
+        128,
+        1
+      ],
+      "110" : []
+    },
+    "outputs" : {
+      "111" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sqrt_51" : {
+    "op_type" : "Sqrt",
+    "attribute" : [],
+    "inputs" : {
+      "111" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "112" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Div_52" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "106" : [
+        1,
+        128,
+        12288
+      ],
+      "112" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "113" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Mul_53" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "113" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.0.ln_1.weight" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "114" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_54" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "114" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.0.ln_1.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "115" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_55" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "115" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "116" : [
+        3
+      ]
+    }
+  },
+  "Constant_56" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_56_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "117" : []
+    }
+  },
+  "Gather_57" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "116" : [
+        3
+      ],
+      "117" : []
+    },
+    "outputs" : {
+      "118" : []
+    }
+  },
+  "Shape_58" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "115" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "119" : [
+        3
+      ]
+    }
+  },
+  "Constant_59" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_59_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "120" : []
+    }
+  },
+  "Gather_60" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "119" : [
+        3
+      ],
+      "120" : []
+    },
+    "outputs" : {
+      "121" : []
+    }
+  },
+  "Shape_61" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "115" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "122" : [
+        3
+      ]
+    }
+  },
+  "Constant_62" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_62_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "123" : [
+        1
+      ]
+    }
+  },
+  "Constant_63" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_63_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "124" : [
+        1
+      ]
+    }
+  },
+  "Constant_64" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_64_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "125" : [
+        1
+      ]
+    }
+  },
+  "Slice_65" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "122" : [
+        3
+      ],
+      "124" : [
+        1
+      ],
+      "125" : [
+        1
+      ],
+      "123" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "126" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_66" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "126" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "127" : []
+    }
+  },
+  "Unsqueeze_67" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "127" : []
+    },
+    "outputs" : {
+      "130" : [
+        1
+      ]
+    }
+  },
+  "Concat_68" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "820" : [
+        1
+      ],
+      "130" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "131" : [
+        2
+      ]
+    }
+  },
+  "Reshape_69" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "115" : [
+        1,
+        128,
+        12288
+      ],
+      "131" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "132" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_70" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "132" : [
+        128,
+        12288
+      ],
+      "model.h.0.attn.c_attn.weight" : [
+        12288,
+        36864
+      ],
+      "model.h.0.attn.c_attn.bias" : [
+        36864
+      ]
+    },
+    "outputs" : {
+      "133" : [
+        128,
+        36864
+      ]
+    }
+  },
+  "Unsqueeze_71" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "118" : []
+    },
+    "outputs" : {
+      "135" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_72" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "121" : []
+    },
+    "outputs" : {
+      "136" : [
+        1
+      ]
+    }
+  },
+  "Concat_73" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "135" : [
+        1
+      ],
+      "136" : [
+        1
+      ],
+      "821" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "138" : [
+        3
+      ]
+    }
+  },
+  "Reshape_74" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "133" : [
+        128,
+        36864
+      ],
+      "138" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "139" : [
+        1,
+        128,
+        36864
+      ]
+    }
+  },
+  "Split_75" : {
+    "op_type" : "Split",
+    "attribute" : [
+      "name: \"axis\" i: 2 type: INT ",
+      "name: \"split\" ints: 12288 ints: 12288 ints: 12288 type: INTS "
+    ],
+    "inputs" : {
+      "139" : [
+        1,
+        128,
+        36864
+      ]
+    },
+    "outputs" : {
+      "140" : [
+        1,
+        128,
+        12288
+      ],
+      "141" : [
+        1,
+        128,
+        12288
+      ],
+      "142" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_76" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "140" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "143" : [
+        3
+      ]
+    }
+  },
+  "Constant_77" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_77_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "144" : []
+    }
+  },
+  "Gather_78" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "143" : [
+        3
+      ],
+      "144" : []
+    },
+    "outputs" : {
+      "145" : []
+    }
+  },
+  "Shape_79" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "140" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "146" : [
+        3
+      ]
+    }
+  },
+  "Constant_80" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_80_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "147" : []
+    }
+  },
+  "Gather_81" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "146" : [
+        3
+      ],
+      "147" : []
+    },
+    "outputs" : {
+      "148" : []
+    }
+  },
+  "Unsqueeze_82" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "145" : []
+    },
+    "outputs" : {
+      "151" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_83" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "148" : []
+    },
+    "outputs" : {
+      "152" : [
+        1
+      ]
+    }
+  },
+  "Concat_84" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "151" : [
+        1
+      ],
+      "152" : [
+        1
+      ],
+      "822" : [
+        1
+      ],
+      "823" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "155" : [
+        4
+      ]
+    }
+  },
+  "Reshape_85" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "140" : [
+        1,
+        128,
+        12288
+      ],
+      "155" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "156" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_86" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "156" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "157" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_87" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "141" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "158" : [
+        3
+      ]
+    }
+  },
+  "Constant_88" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_88_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "159" : []
+    }
+  },
+  "Gather_89" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "158" : [
+        3
+      ],
+      "159" : []
+    },
+    "outputs" : {
+      "160" : []
+    }
+  },
+  "Shape_90" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "141" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "161" : [
+        3
+      ]
+    }
+  },
+  "Constant_91" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_91_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "162" : []
+    }
+  },
+  "Gather_92" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "161" : [
+        3
+      ],
+      "162" : []
+    },
+    "outputs" : {
+      "163" : []
+    }
+  },
+  "Unsqueeze_93" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "160" : []
+    },
+    "outputs" : {
+      "166" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_94" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "163" : []
+    },
+    "outputs" : {
+      "167" : [
+        1
+      ]
+    }
+  },
+  "Concat_95" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "166" : [
+        1
+      ],
+      "167" : [
+        1
+      ],
+      "824" : [
+        1
+      ],
+      "825" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "170" : [
+        4
+      ]
+    }
+  },
+  "Reshape_96" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "141" : [
+        1,
+        128,
+        12288
+      ],
+      "170" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "171" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_97" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "171" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "172" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_98" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "142" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "173" : [
+        3
+      ]
+    }
+  },
+  "Constant_99" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_99_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "174" : []
+    }
+  },
+  "Gather_100" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "173" : [
+        3
+      ],
+      "174" : []
+    },
+    "outputs" : {
+      "175" : []
+    }
+  },
+  "Shape_101" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "142" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "176" : [
+        3
+      ]
+    }
+  },
+  "Constant_102" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_102_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "177" : []
+    }
+  },
+  "Gather_103" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "176" : [
+        3
+      ],
+      "177" : []
+    },
+    "outputs" : {
+      "178" : []
+    }
+  },
+  "Unsqueeze_104" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "175" : []
+    },
+    "outputs" : {
+      "181" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_105" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "178" : []
+    },
+    "outputs" : {
+      "182" : [
+        1
+      ]
+    }
+  },
+  "Concat_106" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "181" : [
+        1
+      ],
+      "182" : [
+        1
+      ],
+      "826" : [
+        1
+      ],
+      "827" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "185" : [
+        4
+      ]
+    }
+  },
+  "Reshape_107" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "142" : [
+        1,
+        128,
+        12288
+      ],
+      "185" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "186" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_108" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "186" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "187" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Transpose_109" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 3 ints: 1 type: INTS "
+    ],
+    "inputs" : {
+      "171" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "188" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "MatMul_110" : {
+    "op_type" : "MatMul",
+    "attribute" : [],
+    "inputs" : {
+      "157" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "188" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "189" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Constant_111" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_111_attr::value\"   raw_data: \"\\363\\0045A\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "190" : []
+    }
+  },
+  "Div_112" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "189" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "190" : []
+    },
+    "outputs" : {
+      "191" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_113" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "157" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "192" : [
+        4
+      ]
+    }
+  },
+  "Constant_114" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_114_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "193" : [
+        1
+      ]
+    }
+  },
+  "Constant_115" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_115_attr::value\"   raw_data: \"\\376\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "194" : [
+        1
+      ]
+    }
+  },
+  "Constant_116" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_116_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "195" : [
+        1
+      ]
+    }
+  },
+  "Slice_117" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "192" : [
+        4
+      ],
+      "194" : [
+        1
+      ],
+      "195" : [
+        1
+      ],
+      "193" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "196" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_118" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "196" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "197" : []
+    }
+  },
+  "Shape_119" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "172" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "198" : [
+        4
+      ]
+    }
+  },
+  "Constant_120" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_120_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "199" : [
+        1
+      ]
+    }
+  },
+  "Constant_121" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_121_attr::value\"   raw_data: \"\\376\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "200" : [
+        1
+      ]
+    }
+  },
+  "Constant_122" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_122_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "201" : [
+        1
+      ]
+    }
+  },
+  "Slice_123" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "198" : [
+        4
+      ],
+      "200" : [
+        1
+      ],
+      "201" : [
+        1
+      ],
+      "199" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "202" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_124" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "202" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "203" : []
+    }
+  },
+  "Sub_125" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "203" : [],
+      "197" : []
+    },
+    "outputs" : {
+      "204" : []
+    }
+  },
+  "Unsqueeze_126" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "204" : []
+    },
+    "outputs" : {
+      "206" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_127" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "203" : []
+    },
+    "outputs" : {
+      "207" : [
+        1
+      ]
+    }
+  },
+  "Constant_128" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_128_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "209" : [
+        1
+      ]
+    }
+  },
+  "Slice_129" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "model.h.0.attn.bias" : [
+        1,
+        1,
+        2048,
+        2048
+      ],
+      "206" : [
+        1
+      ],
+      "207" : [
+        1
+      ],
+      "828" : [
+        1
+      ],
+      "209" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "210" : [
+        1,
+        1,
+        128,
+        2048
+      ]
+    }
+  },
+  "Unsqueeze_130" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "203" : []
+    },
+    "outputs" : {
+      "214" : [
+        1
+      ]
+    }
+  },
+  "Constant_131" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_131_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "216" : [
+        1
+      ]
+    }
+  },
+  "Slice_132" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "210" : [
+        1,
+        1,
+        128,
+        2048
+      ],
+      "829" : [
+        1
+      ],
+      "214" : [
+        1
+      ],
+      "830" : [
+        1
+      ],
+      "216" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "217" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    }
+  },
+  "Cast_133" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 9 type: INT "
+    ],
+    "inputs" : {
+      "217" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "218" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    }
+  },
+  "Where_134" : {
+    "op_type" : "Where",
+    "attribute" : [],
+    "inputs" : {
+      "218" : [
+        1,
+        1,
+        128,
+        128
+      ],
+      "191" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "831" : []
+    },
+    "outputs" : {
+      "220" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Add_135" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "220" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "93" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "221" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Softmax_136" : {
+    "op_type" : "Softmax",
+    "attribute" : [
+      "name: \"axis\" i: 3 type: INT "
+    ],
+    "inputs" : {
+      "221" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "222" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Cast_137" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 1 type: INT "
+    ],
+    "inputs" : {
+      "222" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "223" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "MatMul_138" : {
+    "op_type" : "MatMul",
+    "attribute" : [],
+    "inputs" : {
+      "223" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "187" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "224" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Transpose_139" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "224" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "225" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Shape_140" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "225" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "226" : [
+        4
+      ]
+    }
+  },
+  "Constant_141" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_141_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "227" : []
+    }
+  },
+  "Gather_142" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "226" : [
+        4
+      ],
+      "227" : []
+    },
+    "outputs" : {
+      "228" : []
+    }
+  },
+  "Shape_143" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "225" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "229" : [
+        4
+      ]
+    }
+  },
+  "Constant_144" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_144_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "230" : []
+    }
+  },
+  "Gather_145" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "229" : [
+        4
+      ],
+      "230" : []
+    },
+    "outputs" : {
+      "231" : []
+    }
+  },
+  "Unsqueeze_146" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "228" : []
+    },
+    "outputs" : {
+      "233" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_147" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "231" : []
+    },
+    "outputs" : {
+      "234" : [
+        1
+      ]
+    }
+  },
+  "Concat_148" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "233" : [
+        1
+      ],
+      "234" : [
+        1
+      ],
+      "832" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "236" : [
+        3
+      ]
+    }
+  },
+  "Reshape_149" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "225" : [
+        1,
+        128,
+        96,
+        128
+      ],
+      "236" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "237" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_150" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "237" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "238" : [
+        3
+      ]
+    }
+  },
+  "Constant_151" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_151_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "239" : []
+    }
+  },
+  "Gather_152" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "238" : [
+        3
+      ],
+      "239" : []
+    },
+    "outputs" : {
+      "240" : []
+    }
+  },
+  "Shape_153" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "237" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "241" : [
+        3
+      ]
+    }
+  },
+  "Constant_154" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_154_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "242" : []
+    }
+  },
+  "Gather_155" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "241" : [
+        3
+      ],
+      "242" : []
+    },
+    "outputs" : {
+      "243" : []
+    }
+  },
+  "Shape_156" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "237" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "244" : [
+        3
+      ]
+    }
+  },
+  "Constant_157" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_157_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "245" : [
+        1
+      ]
+    }
+  },
+  "Constant_158" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_158_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "246" : [
+        1
+      ]
+    }
+  },
+  "Constant_159" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_159_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "247" : [
+        1
+      ]
+    }
+  },
+  "Slice_160" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "244" : [
+        3
+      ],
+      "246" : [
+        1
+      ],
+      "247" : [
+        1
+      ],
+      "245" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "248" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_161" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "248" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "249" : []
+    }
+  },
+  "Unsqueeze_162" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "249" : []
+    },
+    "outputs" : {
+      "252" : [
+        1
+      ]
+    }
+  },
+  "Concat_163" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "833" : [
+        1
+      ],
+      "252" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "253" : [
+        2
+      ]
+    }
+  },
+  "Reshape_164" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "237" : [
+        1,
+        128,
+        12288
+      ],
+      "253" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "254" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_165" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "254" : [
+        128,
+        12288
+      ],
+      "model.h.0.attn.c_proj.weight" : [
+        12288,
+        12288
+      ],
+      "model.h.0.attn.c_proj.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "255" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Unsqueeze_166" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "240" : []
+    },
+    "outputs" : {
+      "257" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_167" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "243" : []
+    },
+    "outputs" : {
+      "258" : [
+        1
+      ]
+    }
+  },
+  "Concat_168" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "257" : [
+        1
+      ],
+      "258" : [
+        1
+      ],
+      "834" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "260" : [
+        3
+      ]
+    }
+  },
+  "Reshape_169" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "255" : [
+        128,
+        12288
+      ],
+      "260" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "261" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_170" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "261" : [
+        1,
+        128,
+        12288
+      ],
+      "98" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "262" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_171" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "262" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "263" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sub_172" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "262" : [
+        1,
+        128,
+        12288
+      ],
+      "263" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "264" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Constant_173" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_173_attr::value\"   raw_data: \"\\000\\000\\000@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "265" : []
+    }
+  },
+  "Pow_174" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "264" : [
+        1,
+        128,
+        12288
+      ],
+      "265" : []
+    },
+    "outputs" : {
+      "266" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_175" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "266" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "267" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Constant_176" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_176_attr::value\"   raw_data: \"\\254\\305\\'7\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "268" : []
+    }
+  },
+  "Add_177" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "267" : [
+        1,
+        128,
+        1
+      ],
+      "268" : []
+    },
+    "outputs" : {
+      "269" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sqrt_178" : {
+    "op_type" : "Sqrt",
+    "attribute" : [],
+    "inputs" : {
+      "269" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "270" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Div_179" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "264" : [
+        1,
+        128,
+        12288
+      ],
+      "270" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "271" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Mul_180" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "271" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.0.ln_2.weight" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "272" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_181" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "272" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.0.ln_2.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "273" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_182" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "273" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "274" : [
+        3
+      ]
+    }
+  },
+  "Constant_183" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_183_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "275" : []
+    }
+  },
+  "Gather_184" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "274" : [
+        3
+      ],
+      "275" : []
+    },
+    "outputs" : {
+      "276" : []
+    }
+  },
+  "Shape_185" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "273" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "277" : [
+        3
+      ]
+    }
+  },
+  "Constant_186" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_186_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "278" : []
+    }
+  },
+  "Gather_187" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "277" : [
+        3
+      ],
+      "278" : []
+    },
+    "outputs" : {
+      "279" : []
+    }
+  },
+  "Shape_188" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "273" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "280" : [
+        3
+      ]
+    }
+  },
+  "Constant_189" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_189_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "281" : [
+        1
+      ]
+    }
+  },
+  "Constant_190" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_190_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "282" : [
+        1
+      ]
+    }
+  },
+  "Constant_191" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_191_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "283" : [
+        1
+      ]
+    }
+  },
+  "Slice_192" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "280" : [
+        3
+      ],
+      "282" : [
+        1
+      ],
+      "283" : [
+        1
+      ],
+      "281" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "284" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_193" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "284" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "285" : []
+    }
+  },
+  "Unsqueeze_194" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "285" : []
+    },
+    "outputs" : {
+      "288" : [
+        1
+      ]
+    }
+  },
+  "Concat_195" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "835" : [
+        1
+      ],
+      "288" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "289" : [
+        2
+      ]
+    }
+  },
+  "Reshape_196" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "273" : [
+        1,
+        128,
+        12288
+      ],
+      "289" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "290" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_197" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "290" : [
+        128,
+        12288
+      ],
+      "model.h.0.mlp.c_fc.weight" : [
+        12288,
+        49152
+      ],
+      "model.h.0.mlp.c_fc.bias" : [
+        49152
+      ]
+    },
+    "outputs" : {
+      "291" : [
+        128,
+        49152
+      ]
+    }
+  },
+  "Unsqueeze_198" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "276" : []
+    },
+    "outputs" : {
+      "293" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_199" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "279" : []
+    },
+    "outputs" : {
+      "294" : [
+        1
+      ]
+    }
+  },
+  "Concat_200" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "293" : [
+        1
+      ],
+      "294" : [
+        1
+      ],
+      "836" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "296" : [
+        3
+      ]
+    }
+  },
+  "Reshape_201" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "291" : [
+        128,
+        49152
+      ],
+      "296" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "297" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_202" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_202_attr::value\"   raw_data: \"\\000\\000\\000?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "298" : []
+    }
+  },
+  "Mul_203" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "297" : [
+        1,
+        128,
+        49152
+      ],
+      "298" : []
+    },
+    "outputs" : {
+      "299" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_204" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_204_attr::value\"   raw_data: \"\\000\\000@@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "300" : []
+    }
+  },
+  "Pow_205" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "297" : [
+        1,
+        128,
+        49152
+      ],
+      "300" : []
+    },
+    "outputs" : {
+      "301" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_206" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_206_attr::value\"   raw_data: \"\\023\\'7=\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "302" : []
+    }
+  },
+  "Mul_207" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "301" : [
+        1,
+        128,
+        49152
+      ],
+      "302" : []
+    },
+    "outputs" : {
+      "303" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Add_208" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "297" : [
+        1,
+        128,
+        49152
+      ],
+      "303" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "304" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_209" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_209_attr::value\"   raw_data: \"*BL?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "305" : []
+    }
+  },
+  "Mul_210" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "304" : [
+        1,
+        128,
+        49152
+      ],
+      "305" : []
+    },
+    "outputs" : {
+      "306" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Tanh_211" : {
+    "op_type" : "Tanh",
+    "attribute" : [],
+    "inputs" : {
+      "306" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "307" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_212" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_212_attr::value\"   raw_data: \"\\000\\000\\200?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "308" : []
+    }
+  },
+  "Add_213" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "307" : [
+        1,
+        128,
+        49152
+      ],
+      "308" : []
+    },
+    "outputs" : {
+      "309" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Mul_214" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "299" : [
+        1,
+        128,
+        49152
+      ],
+      "309" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "310" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Shape_215" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "310" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "311" : [
+        3
+      ]
+    }
+  },
+  "Constant_216" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_216_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "312" : []
+    }
+  },
+  "Gather_217" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "311" : [
+        3
+      ],
+      "312" : []
+    },
+    "outputs" : {
+      "313" : []
+    }
+  },
+  "Shape_218" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "310" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "314" : [
+        3
+      ]
+    }
+  },
+  "Constant_219" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_219_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "315" : []
+    }
+  },
+  "Gather_220" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "314" : [
+        3
+      ],
+      "315" : []
+    },
+    "outputs" : {
+      "316" : []
+    }
+  },
+  "Shape_221" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "310" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "317" : [
+        3
+      ]
+    }
+  },
+  "Constant_222" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_222_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "318" : [
+        1
+      ]
+    }
+  },
+  "Constant_223" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_223_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "319" : [
+        1
+      ]
+    }
+  },
+  "Constant_224" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_224_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "320" : [
+        1
+      ]
+    }
+  },
+  "Slice_225" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "317" : [
+        3
+      ],
+      "319" : [
+        1
+      ],
+      "320" : [
+        1
+      ],
+      "318" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "321" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_226" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "321" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "322" : []
+    }
+  },
+  "Unsqueeze_227" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "322" : []
+    },
+    "outputs" : {
+      "325" : [
+        1
+      ]
+    }
+  },
+  "Concat_228" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "837" : [
+        1
+      ],
+      "325" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "326" : [
+        2
+      ]
+    }
+  },
+  "Reshape_229" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "310" : [
+        1,
+        128,
+        49152
+      ],
+      "326" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "327" : [
+        128,
+        49152
+      ]
+    }
+  },
+  "Gemm_230" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "327" : [
+        128,
+        49152
+      ],
+      "model.h.0.mlp.c_proj.weight" : [
+        49152,
+        12288
+      ],
+      "model.h.0.mlp.c_proj.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "328" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Unsqueeze_231" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "313" : []
+    },
+    "outputs" : {
+      "330" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_232" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "316" : []
+    },
+    "outputs" : {
+      "331" : [
+        1
+      ]
+    }
+  },
+  "Concat_233" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "330" : [
+        1
+      ],
+      "331" : [
+        1
+      ],
+      "838" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "333" : [
+        3
+      ]
+    }
+  },
+  "Reshape_234" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "328" : [
+        128,
+        12288
+      ],
+      "333" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "334" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_235" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "262" : [
+        1,
+        128,
+        12288
+      ],
+      "334" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "335" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_236" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "335" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "336" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sub_237" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "335" : [
+        1,
+        128,
+        12288
+      ],
+      "336" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "337" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Constant_238" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_238_attr::value\"   raw_data: \"\\000\\000\\000@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "338" : []
+    }
+  },
+  "Pow_239" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "337" : [
+        1,
+        128,
+        12288
+      ],
+      "338" : []
+    },
+    "outputs" : {
+      "339" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_240" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "339" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "340" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Constant_241" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_241_attr::value\"   raw_data: \"\\254\\305\\'7\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "341" : []
+    }
+  },
+  "Add_242" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "340" : [
+        1,
+        128,
+        1
+      ],
+      "341" : []
+    },
+    "outputs" : {
+      "342" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sqrt_243" : {
+    "op_type" : "Sqrt",
+    "attribute" : [],
+    "inputs" : {
+      "342" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "343" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Div_244" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "337" : [
+        1,
+        128,
+        12288
+      ],
+      "343" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "344" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Mul_245" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "344" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.1.ln_1.weight" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "345" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_246" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "345" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.1.ln_1.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "346" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_247" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "346" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "347" : [
+        3
+      ]
+    }
+  },
+  "Constant_248" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_248_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "348" : []
+    }
+  },
+  "Gather_249" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "347" : [
+        3
+      ],
+      "348" : []
+    },
+    "outputs" : {
+      "349" : []
+    }
+  },
+  "Shape_250" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "346" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "350" : [
+        3
+      ]
+    }
+  },
+  "Constant_251" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_251_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "351" : []
+    }
+  },
+  "Gather_252" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "350" : [
+        3
+      ],
+      "351" : []
+    },
+    "outputs" : {
+      "352" : []
+    }
+  },
+  "Shape_253" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "346" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "353" : [
+        3
+      ]
+    }
+  },
+  "Constant_254" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_254_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "354" : [
+        1
+      ]
+    }
+  },
+  "Constant_255" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_255_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "355" : [
+        1
+      ]
+    }
+  },
+  "Constant_256" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_256_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "356" : [
+        1
+      ]
+    }
+  },
+  "Slice_257" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "353" : [
+        3
+      ],
+      "355" : [
+        1
+      ],
+      "356" : [
+        1
+      ],
+      "354" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "357" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_258" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "357" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "358" : []
+    }
+  },
+  "Unsqueeze_259" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "358" : []
+    },
+    "outputs" : {
+      "361" : [
+        1
+      ]
+    }
+  },
+  "Concat_260" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "839" : [
+        1
+      ],
+      "361" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "362" : [
+        2
+      ]
+    }
+  },
+  "Reshape_261" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "346" : [
+        1,
+        128,
+        12288
+      ],
+      "362" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "363" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_262" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "363" : [
+        128,
+        12288
+      ],
+      "model.h.1.attn.c_attn.weight" : [
+        12288,
+        36864
+      ],
+      "model.h.1.attn.c_attn.bias" : [
+        36864
+      ]
+    },
+    "outputs" : {
+      "364" : [
+        128,
+        36864
+      ]
+    }
+  },
+  "Unsqueeze_263" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "349" : []
+    },
+    "outputs" : {
+      "366" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_264" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "352" : []
+    },
+    "outputs" : {
+      "367" : [
+        1
+      ]
+    }
+  },
+  "Concat_265" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "366" : [
+        1
+      ],
+      "367" : [
+        1
+      ],
+      "840" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "369" : [
+        3
+      ]
+    }
+  },
+  "Reshape_266" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "364" : [
+        128,
+        36864
+      ],
+      "369" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "370" : [
+        1,
+        128,
+        36864
+      ]
+    }
+  },
+  "Split_267" : {
+    "op_type" : "Split",
+    "attribute" : [
+      "name: \"axis\" i: 2 type: INT ",
+      "name: \"split\" ints: 12288 ints: 12288 ints: 12288 type: INTS "
+    ],
+    "inputs" : {
+      "370" : [
+        1,
+        128,
+        36864
+      ]
+    },
+    "outputs" : {
+      "371" : [
+        1,
+        128,
+        12288
+      ],
+      "372" : [
+        1,
+        128,
+        12288
+      ],
+      "373" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_268" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "371" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "374" : [
+        3
+      ]
+    }
+  },
+  "Constant_269" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_269_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "375" : []
+    }
+  },
+  "Gather_270" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "374" : [
+        3
+      ],
+      "375" : []
+    },
+    "outputs" : {
+      "376" : []
+    }
+  },
+  "Shape_271" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "371" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "377" : [
+        3
+      ]
+    }
+  },
+  "Constant_272" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_272_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "378" : []
+    }
+  },
+  "Gather_273" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "377" : [
+        3
+      ],
+      "378" : []
+    },
+    "outputs" : {
+      "379" : []
+    }
+  },
+  "Unsqueeze_274" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "376" : []
+    },
+    "outputs" : {
+      "382" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_275" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "379" : []
+    },
+    "outputs" : {
+      "383" : [
+        1
+      ]
+    }
+  },
+  "Concat_276" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "382" : [
+        1
+      ],
+      "383" : [
+        1
+      ],
+      "841" : [
+        1
+      ],
+      "842" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "386" : [
+        4
+      ]
+    }
+  },
+  "Reshape_277" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "371" : [
+        1,
+        128,
+        12288
+      ],
+      "386" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "387" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_278" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "387" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "388" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_279" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "372" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "389" : [
+        3
+      ]
+    }
+  },
+  "Constant_280" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_280_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "390" : []
+    }
+  },
+  "Gather_281" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "389" : [
+        3
+      ],
+      "390" : []
+    },
+    "outputs" : {
+      "391" : []
+    }
+  },
+  "Shape_282" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "372" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "392" : [
+        3
+      ]
+    }
+  },
+  "Constant_283" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_283_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "393" : []
+    }
+  },
+  "Gather_284" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "392" : [
+        3
+      ],
+      "393" : []
+    },
+    "outputs" : {
+      "394" : []
+    }
+  },
+  "Unsqueeze_285" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "391" : []
+    },
+    "outputs" : {
+      "397" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_286" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "394" : []
+    },
+    "outputs" : {
+      "398" : [
+        1
+      ]
+    }
+  },
+  "Concat_287" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "397" : [
+        1
+      ],
+      "398" : [
+        1
+      ],
+      "843" : [
+        1
+      ],
+      "844" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "401" : [
+        4
+      ]
+    }
+  },
+  "Reshape_288" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "372" : [
+        1,
+        128,
+        12288
+      ],
+      "401" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "402" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_289" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "402" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "403" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_290" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "373" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "404" : [
+        3
+      ]
+    }
+  },
+  "Constant_291" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_291_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "405" : []
+    }
+  },
+  "Gather_292" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "404" : [
+        3
+      ],
+      "405" : []
+    },
+    "outputs" : {
+      "406" : []
+    }
+  },
+  "Shape_293" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "373" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "407" : [
+        3
+      ]
+    }
+  },
+  "Constant_294" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_294_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "408" : []
+    }
+  },
+  "Gather_295" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "407" : [
+        3
+      ],
+      "408" : []
+    },
+    "outputs" : {
+      "409" : []
+    }
+  },
+  "Unsqueeze_296" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "406" : []
+    },
+    "outputs" : {
+      "412" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_297" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "409" : []
+    },
+    "outputs" : {
+      "413" : [
+        1
+      ]
+    }
+  },
+  "Concat_298" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "412" : [
+        1
+      ],
+      "413" : [
+        1
+      ],
+      "845" : [
+        1
+      ],
+      "846" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "416" : [
+        4
+      ]
+    }
+  },
+  "Reshape_299" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "373" : [
+        1,
+        128,
+        12288
+      ],
+      "416" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "417" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_300" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "417" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "418" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Transpose_301" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 3 ints: 1 type: INTS "
+    ],
+    "inputs" : {
+      "402" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "419" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "MatMul_302" : {
+    "op_type" : "MatMul",
+    "attribute" : [],
+    "inputs" : {
+      "388" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "419" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "420" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Constant_303" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_303_attr::value\"   raw_data: \"\\363\\0045A\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "421" : []
+    }
+  },
+  "Div_304" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "420" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "421" : []
+    },
+    "outputs" : {
+      "422" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_305" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "388" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "423" : [
+        4
+      ]
+    }
+  },
+  "Constant_306" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_306_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "424" : [
+        1
+      ]
+    }
+  },
+  "Constant_307" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_307_attr::value\"   raw_data: \"\\376\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "425" : [
+        1
+      ]
+    }
+  },
+  "Constant_308" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_308_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "426" : [
+        1
+      ]
+    }
+  },
+  "Slice_309" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "423" : [
+        4
+      ],
+      "425" : [
+        1
+      ],
+      "426" : [
+        1
+      ],
+      "424" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "427" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_310" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "427" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "428" : []
+    }
+  },
+  "Shape_311" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "403" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "429" : [
+        4
+      ]
+    }
+  },
+  "Constant_312" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_312_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "430" : [
+        1
+      ]
+    }
+  },
+  "Constant_313" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_313_attr::value\"   raw_data: \"\\376\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "431" : [
+        1
+      ]
+    }
+  },
+  "Constant_314" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_314_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "432" : [
+        1
+      ]
+    }
+  },
+  "Slice_315" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "429" : [
+        4
+      ],
+      "431" : [
+        1
+      ],
+      "432" : [
+        1
+      ],
+      "430" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "433" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_316" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "433" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "434" : []
+    }
+  },
+  "Sub_317" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "434" : [],
+      "428" : []
+    },
+    "outputs" : {
+      "435" : []
+    }
+  },
+  "Unsqueeze_318" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "435" : []
+    },
+    "outputs" : {
+      "437" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_319" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "434" : []
+    },
+    "outputs" : {
+      "438" : [
+        1
+      ]
+    }
+  },
+  "Constant_320" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_320_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "440" : [
+        1
+      ]
+    }
+  },
+  "Slice_321" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "model.h.1.attn.bias" : [
+        1,
+        1,
+        2048,
+        2048
+      ],
+      "437" : [
+        1
+      ],
+      "438" : [
+        1
+      ],
+      "847" : [
+        1
+      ],
+      "440" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "441" : [
+        1,
+        1,
+        128,
+        2048
+      ]
+    }
+  },
+  "Unsqueeze_322" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "434" : []
+    },
+    "outputs" : {
+      "445" : [
+        1
+      ]
+    }
+  },
+  "Constant_323" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_323_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "447" : [
+        1
+      ]
+    }
+  },
+  "Slice_324" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "441" : [
+        1,
+        1,
+        128,
+        2048
+      ],
+      "848" : [
+        1
+      ],
+      "445" : [
+        1
+      ],
+      "849" : [
+        1
+      ],
+      "447" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "448" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    }
+  },
+  "Cast_325" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 9 type: INT "
+    ],
+    "inputs" : {
+      "448" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "449" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    }
+  },
+  "Where_326" : {
+    "op_type" : "Where",
+    "attribute" : [],
+    "inputs" : {
+      "449" : [
+        1,
+        1,
+        128,
+        128
+      ],
+      "422" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "850" : []
+    },
+    "outputs" : {
+      "451" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Add_327" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "451" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "93" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "452" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Softmax_328" : {
+    "op_type" : "Softmax",
+    "attribute" : [
+      "name: \"axis\" i: 3 type: INT "
+    ],
+    "inputs" : {
+      "452" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "453" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Cast_329" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 1 type: INT "
+    ],
+    "inputs" : {
+      "453" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "454" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "MatMul_330" : {
+    "op_type" : "MatMul",
+    "attribute" : [],
+    "inputs" : {
+      "454" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "418" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "455" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Transpose_331" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "455" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "456" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Shape_332" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "456" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "457" : [
+        4
+      ]
+    }
+  },
+  "Constant_333" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_333_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "458" : []
+    }
+  },
+  "Gather_334" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "457" : [
+        4
+      ],
+      "458" : []
+    },
+    "outputs" : {
+      "459" : []
+    }
+  },
+  "Shape_335" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "456" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "460" : [
+        4
+      ]
+    }
+  },
+  "Constant_336" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_336_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "461" : []
+    }
+  },
+  "Gather_337" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "460" : [
+        4
+      ],
+      "461" : []
+    },
+    "outputs" : {
+      "462" : []
+    }
+  },
+  "Unsqueeze_338" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "459" : []
+    },
+    "outputs" : {
+      "464" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_339" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "462" : []
+    },
+    "outputs" : {
+      "465" : [
+        1
+      ]
+    }
+  },
+  "Concat_340" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "464" : [
+        1
+      ],
+      "465" : [
+        1
+      ],
+      "851" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "467" : [
+        3
+      ]
+    }
+  },
+  "Reshape_341" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "456" : [
+        1,
+        128,
+        96,
+        128
+      ],
+      "467" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "468" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_342" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "468" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "469" : [
+        3
+      ]
+    }
+  },
+  "Constant_343" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_343_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "470" : []
+    }
+  },
+  "Gather_344" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "469" : [
+        3
+      ],
+      "470" : []
+    },
+    "outputs" : {
+      "471" : []
+    }
+  },
+  "Shape_345" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "468" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "472" : [
+        3
+      ]
+    }
+  },
+  "Constant_346" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_346_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "473" : []
+    }
+  },
+  "Gather_347" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "472" : [
+        3
+      ],
+      "473" : []
+    },
+    "outputs" : {
+      "474" : []
+    }
+  },
+  "Shape_348" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "468" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "475" : [
+        3
+      ]
+    }
+  },
+  "Constant_349" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_349_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "476" : [
+        1
+      ]
+    }
+  },
+  "Constant_350" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_350_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "477" : [
+        1
+      ]
+    }
+  },
+  "Constant_351" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_351_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "478" : [
+        1
+      ]
+    }
+  },
+  "Slice_352" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "475" : [
+        3
+      ],
+      "477" : [
+        1
+      ],
+      "478" : [
+        1
+      ],
+      "476" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "479" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_353" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "479" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "480" : []
+    }
+  },
+  "Unsqueeze_354" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "480" : []
+    },
+    "outputs" : {
+      "483" : [
+        1
+      ]
+    }
+  },
+  "Concat_355" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "852" : [
+        1
+      ],
+      "483" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "484" : [
+        2
+      ]
+    }
+  },
+  "Reshape_356" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "468" : [
+        1,
+        128,
+        12288
+      ],
+      "484" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "485" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_357" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "485" : [
+        128,
+        12288
+      ],
+      "model.h.1.attn.c_proj.weight" : [
+        12288,
+        12288
+      ],
+      "model.h.1.attn.c_proj.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "486" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Unsqueeze_358" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "471" : []
+    },
+    "outputs" : {
+      "488" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_359" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "474" : []
+    },
+    "outputs" : {
+      "489" : [
+        1
+      ]
+    }
+  },
+  "Concat_360" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "488" : [
+        1
+      ],
+      "489" : [
+        1
+      ],
+      "853" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "491" : [
+        3
+      ]
+    }
+  },
+  "Reshape_361" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "486" : [
+        128,
+        12288
+      ],
+      "491" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "492" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_362" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "492" : [
+        1,
+        128,
+        12288
+      ],
+      "335" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "493" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_363" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "493" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "494" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sub_364" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "493" : [
+        1,
+        128,
+        12288
+      ],
+      "494" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "495" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Constant_365" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_365_attr::value\"   raw_data: \"\\000\\000\\000@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "496" : []
+    }
+  },
+  "Pow_366" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "495" : [
+        1,
+        128,
+        12288
+      ],
+      "496" : []
+    },
+    "outputs" : {
+      "497" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_367" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "497" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "498" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Constant_368" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_368_attr::value\"   raw_data: \"\\254\\305\\'7\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "499" : []
+    }
+  },
+  "Add_369" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "498" : [
+        1,
+        128,
+        1
+      ],
+      "499" : []
+    },
+    "outputs" : {
+      "500" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sqrt_370" : {
+    "op_type" : "Sqrt",
+    "attribute" : [],
+    "inputs" : {
+      "500" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "501" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Div_371" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "495" : [
+        1,
+        128,
+        12288
+      ],
+      "501" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "502" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Mul_372" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "502" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.1.ln_2.weight" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "503" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_373" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "503" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.1.ln_2.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "504" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_374" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "504" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "505" : [
+        3
+      ]
+    }
+  },
+  "Constant_375" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_375_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "506" : []
+    }
+  },
+  "Gather_376" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "505" : [
+        3
+      ],
+      "506" : []
+    },
+    "outputs" : {
+      "507" : []
+    }
+  },
+  "Shape_377" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "504" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "508" : [
+        3
+      ]
+    }
+  },
+  "Constant_378" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_378_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "509" : []
+    }
+  },
+  "Gather_379" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "508" : [
+        3
+      ],
+      "509" : []
+    },
+    "outputs" : {
+      "510" : []
+    }
+  },
+  "Shape_380" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "504" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "511" : [
+        3
+      ]
+    }
+  },
+  "Constant_381" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_381_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "512" : [
+        1
+      ]
+    }
+  },
+  "Constant_382" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_382_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "513" : [
+        1
+      ]
+    }
+  },
+  "Constant_383" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_383_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "514" : [
+        1
+      ]
+    }
+  },
+  "Slice_384" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "511" : [
+        3
+      ],
+      "513" : [
+        1
+      ],
+      "514" : [
+        1
+      ],
+      "512" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "515" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_385" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "515" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "516" : []
+    }
+  },
+  "Unsqueeze_386" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "516" : []
+    },
+    "outputs" : {
+      "519" : [
+        1
+      ]
+    }
+  },
+  "Concat_387" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "854" : [
+        1
+      ],
+      "519" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "520" : [
+        2
+      ]
+    }
+  },
+  "Reshape_388" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "504" : [
+        1,
+        128,
+        12288
+      ],
+      "520" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "521" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_389" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "521" : [
+        128,
+        12288
+      ],
+      "model.h.1.mlp.c_fc.weight" : [
+        12288,
+        49152
+      ],
+      "model.h.1.mlp.c_fc.bias" : [
+        49152
+      ]
+    },
+    "outputs" : {
+      "522" : [
+        128,
+        49152
+      ]
+    }
+  },
+  "Unsqueeze_390" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "507" : []
+    },
+    "outputs" : {
+      "524" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_391" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "510" : []
+    },
+    "outputs" : {
+      "525" : [
+        1
+      ]
+    }
+  },
+  "Concat_392" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "524" : [
+        1
+      ],
+      "525" : [
+        1
+      ],
+      "855" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "527" : [
+        3
+      ]
+    }
+  },
+  "Reshape_393" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "522" : [
+        128,
+        49152
+      ],
+      "527" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "528" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_394" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_394_attr::value\"   raw_data: \"\\000\\000\\000?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "529" : []
+    }
+  },
+  "Mul_395" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "528" : [
+        1,
+        128,
+        49152
+      ],
+      "529" : []
+    },
+    "outputs" : {
+      "530" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_396" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_396_attr::value\"   raw_data: \"\\000\\000@@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "531" : []
+    }
+  },
+  "Pow_397" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "528" : [
+        1,
+        128,
+        49152
+      ],
+      "531" : []
+    },
+    "outputs" : {
+      "532" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_398" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_398_attr::value\"   raw_data: \"\\023\\'7=\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "533" : []
+    }
+  },
+  "Mul_399" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "532" : [
+        1,
+        128,
+        49152
+      ],
+      "533" : []
+    },
+    "outputs" : {
+      "534" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Add_400" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "528" : [
+        1,
+        128,
+        49152
+      ],
+      "534" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "535" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_401" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_401_attr::value\"   raw_data: \"*BL?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "536" : []
+    }
+  },
+  "Mul_402" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "535" : [
+        1,
+        128,
+        49152
+      ],
+      "536" : []
+    },
+    "outputs" : {
+      "537" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Tanh_403" : {
+    "op_type" : "Tanh",
+    "attribute" : [],
+    "inputs" : {
+      "537" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "538" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_404" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_404_attr::value\"   raw_data: \"\\000\\000\\200?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "539" : []
+    }
+  },
+  "Add_405" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "538" : [
+        1,
+        128,
+        49152
+      ],
+      "539" : []
+    },
+    "outputs" : {
+      "540" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Mul_406" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "530" : [
+        1,
+        128,
+        49152
+      ],
+      "540" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "541" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Shape_407" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "541" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "542" : [
+        3
+      ]
+    }
+  },
+  "Constant_408" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_408_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "543" : []
+    }
+  },
+  "Gather_409" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "542" : [
+        3
+      ],
+      "543" : []
+    },
+    "outputs" : {
+      "544" : []
+    }
+  },
+  "Shape_410" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "541" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "545" : [
+        3
+      ]
+    }
+  },
+  "Constant_411" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_411_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "546" : []
+    }
+  },
+  "Gather_412" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "545" : [
+        3
+      ],
+      "546" : []
+    },
+    "outputs" : {
+      "547" : []
+    }
+  },
+  "Shape_413" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "541" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "548" : [
+        3
+      ]
+    }
+  },
+  "Constant_414" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_414_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "549" : [
+        1
+      ]
+    }
+  },
+  "Constant_415" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_415_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "550" : [
+        1
+      ]
+    }
+  },
+  "Constant_416" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_416_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "551" : [
+        1
+      ]
+    }
+  },
+  "Slice_417" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "548" : [
+        3
+      ],
+      "550" : [
+        1
+      ],
+      "551" : [
+        1
+      ],
+      "549" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "552" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_418" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "552" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "553" : []
+    }
+  },
+  "Unsqueeze_419" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "553" : []
+    },
+    "outputs" : {
+      "556" : [
+        1
+      ]
+    }
+  },
+  "Concat_420" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "856" : [
+        1
+      ],
+      "556" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "557" : [
+        2
+      ]
+    }
+  },
+  "Reshape_421" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "541" : [
+        1,
+        128,
+        49152
+      ],
+      "557" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "558" : [
+        128,
+        49152
+      ]
+    }
+  },
+  "Gemm_422" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "558" : [
+        128,
+        49152
+      ],
+      "model.h.1.mlp.c_proj.weight" : [
+        49152,
+        12288
+      ],
+      "model.h.1.mlp.c_proj.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "559" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Unsqueeze_423" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "544" : []
+    },
+    "outputs" : {
+      "561" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_424" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "547" : []
+    },
+    "outputs" : {
+      "562" : [
+        1
+      ]
+    }
+  },
+  "Concat_425" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "561" : [
+        1
+      ],
+      "562" : [
+        1
+      ],
+      "857" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "564" : [
+        3
+      ]
+    }
+  },
+  "Reshape_426" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "559" : [
+        128,
+        12288
+      ],
+      "564" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "565" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_427" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "493" : [
+        1,
+        128,
+        12288
+      ],
+      "565" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "566" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_428" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "566" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "567" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sub_429" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "566" : [
+        1,
+        128,
+        12288
+      ],
+      "567" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "568" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Constant_430" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_430_attr::value\"   raw_data: \"\\000\\000\\000@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "569" : []
+    }
+  },
+  "Pow_431" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "568" : [
+        1,
+        128,
+        12288
+      ],
+      "569" : []
+    },
+    "outputs" : {
+      "570" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_432" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "570" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "571" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Constant_433" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_433_attr::value\"   raw_data: \"\\254\\305\\'7\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "572" : []
+    }
+  },
+  "Add_434" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "571" : [
+        1,
+        128,
+        1
+      ],
+      "572" : []
+    },
+    "outputs" : {
+      "573" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sqrt_435" : {
+    "op_type" : "Sqrt",
+    "attribute" : [],
+    "inputs" : {
+      "573" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "574" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Div_436" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "568" : [
+        1,
+        128,
+        12288
+      ],
+      "574" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "575" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Mul_437" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "575" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.2.ln_1.weight" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "576" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_438" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "576" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.2.ln_1.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "577" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_439" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "577" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "578" : [
+        3
+      ]
+    }
+  },
+  "Constant_440" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_440_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "579" : []
+    }
+  },
+  "Gather_441" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "578" : [
+        3
+      ],
+      "579" : []
+    },
+    "outputs" : {
+      "580" : []
+    }
+  },
+  "Shape_442" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "577" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "581" : [
+        3
+      ]
+    }
+  },
+  "Constant_443" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_443_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "582" : []
+    }
+  },
+  "Gather_444" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "581" : [
+        3
+      ],
+      "582" : []
+    },
+    "outputs" : {
+      "583" : []
+    }
+  },
+  "Shape_445" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "577" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "584" : [
+        3
+      ]
+    }
+  },
+  "Constant_446" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_446_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "585" : [
+        1
+      ]
+    }
+  },
+  "Constant_447" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_447_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "586" : [
+        1
+      ]
+    }
+  },
+  "Constant_448" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_448_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "587" : [
+        1
+      ]
+    }
+  },
+  "Slice_449" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "584" : [
+        3
+      ],
+      "586" : [
+        1
+      ],
+      "587" : [
+        1
+      ],
+      "585" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "588" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_450" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "588" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "589" : []
+    }
+  },
+  "Unsqueeze_451" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "589" : []
+    },
+    "outputs" : {
+      "592" : [
+        1
+      ]
+    }
+  },
+  "Concat_452" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "858" : [
+        1
+      ],
+      "592" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "593" : [
+        2
+      ]
+    }
+  },
+  "Reshape_453" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "577" : [
+        1,
+        128,
+        12288
+      ],
+      "593" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "594" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_454" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "594" : [
+        128,
+        12288
+      ],
+      "model.h.2.attn.c_attn.weight" : [
+        12288,
+        36864
+      ],
+      "model.h.2.attn.c_attn.bias" : [
+        36864
+      ]
+    },
+    "outputs" : {
+      "595" : [
+        128,
+        36864
+      ]
+    }
+  },
+  "Unsqueeze_455" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "580" : []
+    },
+    "outputs" : {
+      "597" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_456" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "583" : []
+    },
+    "outputs" : {
+      "598" : [
+        1
+      ]
+    }
+  },
+  "Concat_457" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "597" : [
+        1
+      ],
+      "598" : [
+        1
+      ],
+      "859" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "600" : [
+        3
+      ]
+    }
+  },
+  "Reshape_458" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "595" : [
+        128,
+        36864
+      ],
+      "600" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "601" : [
+        1,
+        128,
+        36864
+      ]
+    }
+  },
+  "Split_459" : {
+    "op_type" : "Split",
+    "attribute" : [
+      "name: \"axis\" i: 2 type: INT ",
+      "name: \"split\" ints: 12288 ints: 12288 ints: 12288 type: INTS "
+    ],
+    "inputs" : {
+      "601" : [
+        1,
+        128,
+        36864
+      ]
+    },
+    "outputs" : {
+      "602" : [
+        1,
+        128,
+        12288
+      ],
+      "603" : [
+        1,
+        128,
+        12288
+      ],
+      "604" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_460" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "602" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "605" : [
+        3
+      ]
+    }
+  },
+  "Constant_461" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_461_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "606" : []
+    }
+  },
+  "Gather_462" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "605" : [
+        3
+      ],
+      "606" : []
+    },
+    "outputs" : {
+      "607" : []
+    }
+  },
+  "Shape_463" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "602" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "608" : [
+        3
+      ]
+    }
+  },
+  "Constant_464" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_464_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "609" : []
+    }
+  },
+  "Gather_465" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "608" : [
+        3
+      ],
+      "609" : []
+    },
+    "outputs" : {
+      "610" : []
+    }
+  },
+  "Unsqueeze_466" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "607" : []
+    },
+    "outputs" : {
+      "613" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_467" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "610" : []
+    },
+    "outputs" : {
+      "614" : [
+        1
+      ]
+    }
+  },
+  "Concat_468" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "613" : [
+        1
+      ],
+      "614" : [
+        1
+      ],
+      "860" : [
+        1
+      ],
+      "861" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "617" : [
+        4
+      ]
+    }
+  },
+  "Reshape_469" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "602" : [
+        1,
+        128,
+        12288
+      ],
+      "617" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "618" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_470" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "618" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "619" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_471" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "603" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "620" : [
+        3
+      ]
+    }
+  },
+  "Constant_472" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_472_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "621" : []
+    }
+  },
+  "Gather_473" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "620" : [
+        3
+      ],
+      "621" : []
+    },
+    "outputs" : {
+      "622" : []
+    }
+  },
+  "Shape_474" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "603" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "623" : [
+        3
+      ]
+    }
+  },
+  "Constant_475" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_475_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "624" : []
+    }
+  },
+  "Gather_476" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "623" : [
+        3
+      ],
+      "624" : []
+    },
+    "outputs" : {
+      "625" : []
+    }
+  },
+  "Unsqueeze_477" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "622" : []
+    },
+    "outputs" : {
+      "628" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_478" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "625" : []
+    },
+    "outputs" : {
+      "629" : [
+        1
+      ]
+    }
+  },
+  "Concat_479" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "628" : [
+        1
+      ],
+      "629" : [
+        1
+      ],
+      "862" : [
+        1
+      ],
+      "863" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "632" : [
+        4
+      ]
+    }
+  },
+  "Reshape_480" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "603" : [
+        1,
+        128,
+        12288
+      ],
+      "632" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "633" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_481" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "633" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "634" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_482" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "604" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "635" : [
+        3
+      ]
+    }
+  },
+  "Constant_483" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_483_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "636" : []
+    }
+  },
+  "Gather_484" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "635" : [
+        3
+      ],
+      "636" : []
+    },
+    "outputs" : {
+      "637" : []
+    }
+  },
+  "Shape_485" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "604" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "638" : [
+        3
+      ]
+    }
+  },
+  "Constant_486" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_486_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "639" : []
+    }
+  },
+  "Gather_487" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "638" : [
+        3
+      ],
+      "639" : []
+    },
+    "outputs" : {
+      "640" : []
+    }
+  },
+  "Unsqueeze_488" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "637" : []
+    },
+    "outputs" : {
+      "643" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_489" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "640" : []
+    },
+    "outputs" : {
+      "644" : [
+        1
+      ]
+    }
+  },
+  "Concat_490" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "643" : [
+        1
+      ],
+      "644" : [
+        1
+      ],
+      "864" : [
+        1
+      ],
+      "865" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "647" : [
+        4
+      ]
+    }
+  },
+  "Reshape_491" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "604" : [
+        1,
+        128,
+        12288
+      ],
+      "647" : [
+        4
+      ]
+    },
+    "outputs" : {
+      "648" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Transpose_492" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "648" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "649" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Transpose_493" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 3 ints: 1 type: INTS "
+    ],
+    "inputs" : {
+      "633" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "650" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "MatMul_494" : {
+    "op_type" : "MatMul",
+    "attribute" : [],
+    "inputs" : {
+      "619" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "650" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "651" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Constant_495" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_495_attr::value\"   raw_data: \"\\363\\0045A\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "652" : []
+    }
+  },
+  "Div_496" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "651" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "652" : []
+    },
+    "outputs" : {
+      "653" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Shape_497" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "619" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "654" : [
+        4
+      ]
+    }
+  },
+  "Constant_498" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_498_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "655" : [
+        1
+      ]
+    }
+  },
+  "Constant_499" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_499_attr::value\"   raw_data: \"\\376\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "656" : [
+        1
+      ]
+    }
+  },
+  "Constant_500" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_500_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "657" : [
+        1
+      ]
+    }
+  },
+  "Slice_501" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "654" : [
+        4
+      ],
+      "656" : [
+        1
+      ],
+      "657" : [
+        1
+      ],
+      "655" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "658" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_502" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "658" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "659" : []
+    }
+  },
+  "Shape_503" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "634" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "660" : [
+        4
+      ]
+    }
+  },
+  "Constant_504" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_504_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "661" : [
+        1
+      ]
+    }
+  },
+  "Constant_505" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_505_attr::value\"   raw_data: \"\\376\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "662" : [
+        1
+      ]
+    }
+  },
+  "Constant_506" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_506_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "663" : [
+        1
+      ]
+    }
+  },
+  "Slice_507" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "660" : [
+        4
+      ],
+      "662" : [
+        1
+      ],
+      "663" : [
+        1
+      ],
+      "661" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "664" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_508" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "664" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "665" : []
+    }
+  },
+  "Sub_509" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "665" : [],
+      "659" : []
+    },
+    "outputs" : {
+      "666" : []
+    }
+  },
+  "Unsqueeze_510" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "666" : []
+    },
+    "outputs" : {
+      "668" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_511" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "665" : []
+    },
+    "outputs" : {
+      "669" : [
+        1
+      ]
+    }
+  },
+  "Constant_512" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_512_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "671" : [
+        1
+      ]
+    }
+  },
+  "Slice_513" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "model.h.2.attn.bias" : [
+        1,
+        1,
+        2048,
+        2048
+      ],
+      "668" : [
+        1
+      ],
+      "669" : [
+        1
+      ],
+      "866" : [
+        1
+      ],
+      "671" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "672" : [
+        1,
+        1,
+        128,
+        2048
+      ]
+    }
+  },
+  "Unsqueeze_514" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "665" : []
+    },
+    "outputs" : {
+      "676" : [
+        1
+      ]
+    }
+  },
+  "Constant_515" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_515_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "678" : [
+        1
+      ]
+    }
+  },
+  "Slice_516" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "672" : [
+        1,
+        1,
+        128,
+        2048
+      ],
+      "867" : [
+        1
+      ],
+      "676" : [
+        1
+      ],
+      "868" : [
+        1
+      ],
+      "678" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "679" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    }
+  },
+  "Cast_517" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 9 type: INT "
+    ],
+    "inputs" : {
+      "679" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "680" : [
+        1,
+        1,
+        128,
+        128
+      ]
+    }
+  },
+  "Where_518" : {
+    "op_type" : "Where",
+    "attribute" : [],
+    "inputs" : {
+      "680" : [
+        1,
+        1,
+        128,
+        128
+      ],
+      "653" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "869" : []
+    },
+    "outputs" : {
+      "682" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Add_519" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "682" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "93" : [
+        1,
+        1,
+        1,
+        128
+      ]
+    },
+    "outputs" : {
+      "683" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Softmax_520" : {
+    "op_type" : "Softmax",
+    "attribute" : [
+      "name: \"axis\" i: 3 type: INT "
+    ],
+    "inputs" : {
+      "683" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "684" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Cast_521" : {
+    "op_type" : "Cast",
+    "attribute" : [
+      "name: \"to\" i: 1 type: INT "
+    ],
+    "inputs" : {
+      "684" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "685" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "MatMul_522" : {
+    "op_type" : "MatMul",
+    "attribute" : [],
+    "inputs" : {
+      "685" : [
+        1,
+        96,
+        128,
+        128
+      ],
+      "649" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "686" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    }
+  },
+  "Transpose_523" : {
+    "op_type" : "Transpose",
+    "attribute" : [
+      "name: \"perm\" ints: 0 ints: 2 ints: 1 ints: 3 type: INTS "
+    ],
+    "inputs" : {
+      "686" : [
+        1,
+        96,
+        128,
+        128
+      ]
+    },
+    "outputs" : {
+      "687" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    }
+  },
+  "Shape_524" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "687" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "688" : [
+        4
+      ]
+    }
+  },
+  "Constant_525" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_525_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "689" : []
+    }
+  },
+  "Gather_526" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "688" : [
+        4
+      ],
+      "689" : []
+    },
+    "outputs" : {
+      "690" : []
+    }
+  },
+  "Shape_527" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "687" : [
+        1,
+        128,
+        96,
+        128
+      ]
+    },
+    "outputs" : {
+      "691" : [
+        4
+      ]
+    }
+  },
+  "Constant_528" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_528_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "692" : []
+    }
+  },
+  "Gather_529" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "691" : [
+        4
+      ],
+      "692" : []
+    },
+    "outputs" : {
+      "693" : []
+    }
+  },
+  "Unsqueeze_530" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "690" : []
+    },
+    "outputs" : {
+      "695" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_531" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "693" : []
+    },
+    "outputs" : {
+      "696" : [
+        1
+      ]
+    }
+  },
+  "Concat_532" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "695" : [
+        1
+      ],
+      "696" : [
+        1
+      ],
+      "870" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "698" : [
+        3
+      ]
+    }
+  },
+  "Reshape_533" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "687" : [
+        1,
+        128,
+        96,
+        128
+      ],
+      "698" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "699" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_534" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "699" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "700" : [
+        3
+      ]
+    }
+  },
+  "Constant_535" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_535_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "701" : []
+    }
+  },
+  "Gather_536" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "700" : [
+        3
+      ],
+      "701" : []
+    },
+    "outputs" : {
+      "702" : []
+    }
+  },
+  "Shape_537" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "699" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "703" : [
+        3
+      ]
+    }
+  },
+  "Constant_538" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_538_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "704" : []
+    }
+  },
+  "Gather_539" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "703" : [
+        3
+      ],
+      "704" : []
+    },
+    "outputs" : {
+      "705" : []
+    }
+  },
+  "Shape_540" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "699" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "706" : [
+        3
+      ]
+    }
+  },
+  "Constant_541" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_541_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "707" : [
+        1
+      ]
+    }
+  },
+  "Constant_542" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_542_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "708" : [
+        1
+      ]
+    }
+  },
+  "Constant_543" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_543_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "709" : [
+        1
+      ]
+    }
+  },
+  "Slice_544" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "706" : [
+        3
+      ],
+      "708" : [
+        1
+      ],
+      "709" : [
+        1
+      ],
+      "707" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "710" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_545" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "710" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "711" : []
+    }
+  },
+  "Unsqueeze_546" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "711" : []
+    },
+    "outputs" : {
+      "714" : [
+        1
+      ]
+    }
+  },
+  "Concat_547" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "871" : [
+        1
+      ],
+      "714" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "715" : [
+        2
+      ]
+    }
+  },
+  "Reshape_548" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "699" : [
+        1,
+        128,
+        12288
+      ],
+      "715" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "716" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_549" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "716" : [
+        128,
+        12288
+      ],
+      "model.h.2.attn.c_proj.weight" : [
+        12288,
+        12288
+      ],
+      "model.h.2.attn.c_proj.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "717" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Unsqueeze_550" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "702" : []
+    },
+    "outputs" : {
+      "719" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_551" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "705" : []
+    },
+    "outputs" : {
+      "720" : [
+        1
+      ]
+    }
+  },
+  "Concat_552" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "719" : [
+        1
+      ],
+      "720" : [
+        1
+      ],
+      "872" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "722" : [
+        3
+      ]
+    }
+  },
+  "Reshape_553" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "717" : [
+        128,
+        12288
+      ],
+      "722" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "723" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_554" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "723" : [
+        1,
+        128,
+        12288
+      ],
+      "566" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "724" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_555" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "724" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "725" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sub_556" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "724" : [
+        1,
+        128,
+        12288
+      ],
+      "725" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "726" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Constant_557" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_557_attr::value\"   raw_data: \"\\000\\000\\000@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "727" : []
+    }
+  },
+  "Pow_558" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "726" : [
+        1,
+        128,
+        12288
+      ],
+      "727" : []
+    },
+    "outputs" : {
+      "728" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_559" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "728" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "729" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Constant_560" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_560_attr::value\"   raw_data: \"\\254\\305\\'7\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "730" : []
+    }
+  },
+  "Add_561" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "729" : [
+        1,
+        128,
+        1
+      ],
+      "730" : []
+    },
+    "outputs" : {
+      "731" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sqrt_562" : {
+    "op_type" : "Sqrt",
+    "attribute" : [],
+    "inputs" : {
+      "731" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "732" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Div_563" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "726" : [
+        1,
+        128,
+        12288
+      ],
+      "732" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "733" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Mul_564" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "733" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.2.ln_2.weight" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "734" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_565" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "734" : [
+        1,
+        128,
+        12288
+      ],
+      "model.h.2.ln_2.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "735" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Shape_566" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "735" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "736" : [
+        3
+      ]
+    }
+  },
+  "Constant_567" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_567_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "737" : []
+    }
+  },
+  "Gather_568" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "736" : [
+        3
+      ],
+      "737" : []
+    },
+    "outputs" : {
+      "738" : []
+    }
+  },
+  "Shape_569" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "735" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "739" : [
+        3
+      ]
+    }
+  },
+  "Constant_570" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_570_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "740" : []
+    }
+  },
+  "Gather_571" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "739" : [
+        3
+      ],
+      "740" : []
+    },
+    "outputs" : {
+      "741" : []
+    }
+  },
+  "Shape_572" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "735" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "742" : [
+        3
+      ]
+    }
+  },
+  "Constant_573" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_573_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "743" : [
+        1
+      ]
+    }
+  },
+  "Constant_574" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_574_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "744" : [
+        1
+      ]
+    }
+  },
+  "Constant_575" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_575_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "745" : [
+        1
+      ]
+    }
+  },
+  "Slice_576" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "742" : [
+        3
+      ],
+      "744" : [
+        1
+      ],
+      "745" : [
+        1
+      ],
+      "743" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "746" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_577" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "746" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "747" : []
+    }
+  },
+  "Unsqueeze_578" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "747" : []
+    },
+    "outputs" : {
+      "750" : [
+        1
+      ]
+    }
+  },
+  "Concat_579" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "873" : [
+        1
+      ],
+      "750" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "751" : [
+        2
+      ]
+    }
+  },
+  "Reshape_580" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "735" : [
+        1,
+        128,
+        12288
+      ],
+      "751" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "752" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Gemm_581" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "752" : [
+        128,
+        12288
+      ],
+      "model.h.2.mlp.c_fc.weight" : [
+        12288,
+        49152
+      ],
+      "model.h.2.mlp.c_fc.bias" : [
+        49152
+      ]
+    },
+    "outputs" : {
+      "753" : [
+        128,
+        49152
+      ]
+    }
+  },
+  "Unsqueeze_582" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "738" : []
+    },
+    "outputs" : {
+      "755" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_583" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "741" : []
+    },
+    "outputs" : {
+      "756" : [
+        1
+      ]
+    }
+  },
+  "Concat_584" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "755" : [
+        1
+      ],
+      "756" : [
+        1
+      ],
+      "874" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "758" : [
+        3
+      ]
+    }
+  },
+  "Reshape_585" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "753" : [
+        128,
+        49152
+      ],
+      "758" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "759" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_586" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_586_attr::value\"   raw_data: \"\\000\\000\\000?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "760" : []
+    }
+  },
+  "Mul_587" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "759" : [
+        1,
+        128,
+        49152
+      ],
+      "760" : []
+    },
+    "outputs" : {
+      "761" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_588" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_588_attr::value\"   raw_data: \"\\000\\000@@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "762" : []
+    }
+  },
+  "Pow_589" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "759" : [
+        1,
+        128,
+        49152
+      ],
+      "762" : []
+    },
+    "outputs" : {
+      "763" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_590" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_590_attr::value\"   raw_data: \"\\023\\'7=\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "764" : []
+    }
+  },
+  "Mul_591" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "763" : [
+        1,
+        128,
+        49152
+      ],
+      "764" : []
+    },
+    "outputs" : {
+      "765" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Add_592" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "759" : [
+        1,
+        128,
+        49152
+      ],
+      "765" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "766" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_593" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_593_attr::value\"   raw_data: \"*BL?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "767" : []
+    }
+  },
+  "Mul_594" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "766" : [
+        1,
+        128,
+        49152
+      ],
+      "767" : []
+    },
+    "outputs" : {
+      "768" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Tanh_595" : {
+    "op_type" : "Tanh",
+    "attribute" : [],
+    "inputs" : {
+      "768" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "769" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Constant_596" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_596_attr::value\"   raw_data: \"\\000\\000\\200?\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "770" : []
+    }
+  },
+  "Add_597" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "769" : [
+        1,
+        128,
+        49152
+      ],
+      "770" : []
+    },
+    "outputs" : {
+      "771" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Mul_598" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "761" : [
+        1,
+        128,
+        49152
+      ],
+      "771" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "772" : [
+        1,
+        128,
+        49152
+      ]
+    }
+  },
+  "Shape_599" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "772" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "773" : [
+        3
+      ]
+    }
+  },
+  "Constant_600" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_600_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "774" : []
+    }
+  },
+  "Gather_601" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "773" : [
+        3
+      ],
+      "774" : []
+    },
+    "outputs" : {
+      "775" : []
+    }
+  },
+  "Shape_602" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "772" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "776" : [
+        3
+      ]
+    }
+  },
+  "Constant_603" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 7   name: \"Constant_603_attr::value\"   raw_data: \"\\001\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "777" : []
+    }
+  },
+  "Gather_604" : {
+    "op_type" : "Gather",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "776" : [
+        3
+      ],
+      "777" : []
+    },
+    "outputs" : {
+      "778" : []
+    }
+  },
+  "Shape_605" : {
+    "op_type" : "Shape",
+    "attribute" : [],
+    "inputs" : {
+      "772" : [
+        1,
+        128,
+        49152
+      ]
+    },
+    "outputs" : {
+      "779" : [
+        3
+      ]
+    }
+  },
+  "Constant_606" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_606_attr::value\"   raw_data: \"\\000\\000\\000\\000\\000\\000\\000\\000\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "780" : [
+        1
+      ]
+    }
+  },
+  "Constant_607" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_607_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\377\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "781" : [
+        1
+      ]
+    }
+  },
+  "Constant_608" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   dims: 1   data_type: 7   name: \"Constant_608_attr::value\"   raw_data: \"\\377\\377\\377\\377\\377\\377\\377\\177\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "782" : [
+        1
+      ]
+    }
+  },
+  "Slice_609" : {
+    "op_type" : "Slice",
+    "attribute" : [],
+    "inputs" : {
+      "779" : [
+        3
+      ],
+      "781" : [
+        1
+      ],
+      "782" : [
+        1
+      ],
+      "780" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "783" : [
+        1
+      ]
+    }
+  },
+  "Squeeze_610" : {
+    "op_type" : "Squeeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "783" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "784" : []
+    }
+  },
+  "Unsqueeze_611" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "784" : []
+    },
+    "outputs" : {
+      "787" : [
+        1
+      ]
+    }
+  },
+  "Concat_612" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "875" : [
+        1
+      ],
+      "787" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "788" : [
+        2
+      ]
+    }
+  },
+  "Reshape_613" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "772" : [
+        1,
+        128,
+        49152
+      ],
+      "788" : [
+        2
+      ]
+    },
+    "outputs" : {
+      "789" : [
+        128,
+        49152
+      ]
+    }
+  },
+  "Gemm_614" : {
+    "op_type" : "Gemm",
+    "attribute" : [
+      "name: \"alpha\" f: 1.0 type: FLOAT ",
+      "name: \"beta\" f: 1.0 type: FLOAT "
+    ],
+    "inputs" : {
+      "789" : [
+        128,
+        49152
+      ],
+      "model.h.2.mlp.c_proj.weight" : [
+        49152,
+        12288
+      ],
+      "model.h.2.mlp.c_proj.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "790" : [
+        128,
+        12288
+      ]
+    }
+  },
+  "Unsqueeze_615" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "775" : []
+    },
+    "outputs" : {
+      "792" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_616" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "778" : []
+    },
+    "outputs" : {
+      "793" : [
+        1
+      ]
+    }
+  },
+  "Concat_617" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "792" : [
+        1
+      ],
+      "793" : [
+        1
+      ],
+      "876" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "795" : [
+        3
+      ]
+    }
+  },
+  "Reshape_618" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "790" : [
+        128,
+        12288
+      ],
+      "795" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "796" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_619" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "724" : [
+        1,
+        128,
+        12288
+      ],
+      "796" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "797" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_620" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "797" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "798" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sub_621" : {
+    "op_type" : "Sub",
+    "attribute" : [],
+    "inputs" : {
+      "797" : [
+        1,
+        128,
+        12288
+      ],
+      "798" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "799" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Constant_622" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_622_attr::value\"   raw_data: \"\\000\\000\\000@\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "800" : []
+    }
+  },
+  "Pow_623" : {
+    "op_type" : "Pow",
+    "attribute" : [],
+    "inputs" : {
+      "799" : [
+        1,
+        128,
+        12288
+      ],
+      "800" : []
+    },
+    "outputs" : {
+      "801" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "ReduceMean_624" : {
+    "op_type" : "ReduceMean",
+    "attribute" : [
+      "name: \"axes\" ints: -1 type: INTS "
+    ],
+    "inputs" : {
+      "801" : [
+        1,
+        128,
+        12288
+      ]
+    },
+    "outputs" : {
+      "802" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Constant_625" : {
+    "op_type" : "Constant",
+    "attribute" : [
+      "name: \"value\" t {   data_type: 1   name: \"Constant_625_attr::value\"   raw_data: \"\\254\\305\\'7\" } type: TENSOR "
+    ],
+    "inputs" : {},
+    "outputs" : {
+      "803" : []
+    }
+  },
+  "Add_626" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "802" : [
+        1,
+        128,
+        1
+      ],
+      "803" : []
+    },
+    "outputs" : {
+      "804" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Sqrt_627" : {
+    "op_type" : "Sqrt",
+    "attribute" : [],
+    "inputs" : {
+      "804" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "805" : [
+        1,
+        128,
+        1
+      ]
+    }
+  },
+  "Div_628" : {
+    "op_type" : "Div",
+    "attribute" : [],
+    "inputs" : {
+      "799" : [
+        1,
+        128,
+        12288
+      ],
+      "805" : [
+        1,
+        128,
+        1
+      ]
+    },
+    "outputs" : {
+      "806" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Mul_629" : {
+    "op_type" : "Mul",
+    "attribute" : [],
+    "inputs" : {
+      "806" : [
+        1,
+        128,
+        12288
+      ],
+      "model.ln_f.weight" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "807" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Add_630" : {
+    "op_type" : "Add",
+    "attribute" : [],
+    "inputs" : {
+      "807" : [
+        1,
+        128,
+        12288
+      ],
+      "model.ln_f.bias" : [
+        12288
+      ]
+    },
+    "outputs" : {
+      "808" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  },
+  "Unsqueeze_631" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "51" : []
+    },
+    "outputs" : {
+      "809" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_632" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "54" : []
+    },
+    "outputs" : {
+      "810" : [
+        1
+      ]
+    }
+  },
+  "Unsqueeze_633" : {
+    "op_type" : "Unsqueeze",
+    "attribute" : [
+      "name: \"axes\" ints: 0 type: INTS "
+    ],
+    "inputs" : {
+      "104" : []
+    },
+    "outputs" : {
+      "811" : [
+        1
+      ]
+    }
+  },
+  "Concat_634" : {
+    "op_type" : "Concat",
+    "attribute" : [
+      "name: \"axis\" i: 0 type: INT "
+    ],
+    "inputs" : {
+      "809" : [
+        1
+      ],
+      "810" : [
+        1
+      ],
+      "811" : [
+        1
+      ]
+    },
+    "outputs" : {
+      "812" : [
+        3
+      ]
+    }
+  },
+  "Reshape_635" : {
+    "op_type" : "Reshape",
+    "attribute" : [],
+    "inputs" : {
+      "808" : [
+        1,
+        128,
+        12288
+      ],
+      "812" : [
+        3
+      ]
+    },
+    "outputs" : {
+      "enc_out" : [
+        1,
+        128,
+        12288
+      ]
+    }
+  }
+}
