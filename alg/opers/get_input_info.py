@@ -18,6 +18,7 @@ import json
 import argparse
 import copy
 from dataclasses import dataclass
+from collections import OrderedDict
 
 
 LAY_BEG_IDX = 44
@@ -68,6 +69,19 @@ class Worker(object):
         self.out_diff = [int(x[1][0]) for x in out_diff]
         in_diff = self.get_layer_info(1)
         self.in_diff = [[int(x[-1]) for x in y[1] if x[-1].isnumeric()] for y in in_diff]
+        tail_out_diff = self.get_tail_out_info()
+        self.tail_out_diff = [int(x[1][0]) for x in tail_out_diff if x[1][0].isnumeric()]
+        tail_in_diff = self.get_tail_input_info()
+        self.tail_in_diff = [[int(x[-1]) for x in y[1] if x[-1].isnumeric()] for y in tail_in_diff]
+
+    def _update_specs(self):
+        self.begin_tensor = self._get_begin_tensor()
+        self.lg_out_tensor = self._get_largest_out()
+
+    def _update_map_info(self):
+        self.node_map = self._cons_node_map()
+        self.tensor_map = self._cons_tensor_map()
+        self.t_unk_map = self._cons_t_unk_map()
 
     def _get_begin_tensor(self):
         out_arr = list(self.seqs[0][1]['outputs'].keys())
@@ -159,7 +173,7 @@ class Worker(object):
         return node_type
 
     def get_tensor_unk(self, tensor_id):
-        unk_type  = self.t_unk_map.get(tensor_id, None)
+        unk_type = self.t_unk_map.get(tensor_id, None)
         if unk_type is None:
             if 'larger_unk' in tensor_id:
                 return unk_types[1]
@@ -181,10 +195,23 @@ class Worker(object):
             res.append([name, node_info_arr])
         return res
 
+    def get_tail_input_info(self):
+        beg_idx = LAY_BEG_IDX + self.layers * LAY_OPS
+        sub_arr = self.seqs[beg_idx:]
+        res = []
+        for name, node_info in sub_arr:
+            input_ids = node_info['inputs']
+            node_info_arr = []
+            for t_id in input_ids.keys():
+                ts_info = self._get_ts_info(t_id)
+                node_info = self._get_n_ds(ts_info.node_name)
+                diff = self._calc_node_name_diff(name, node_info)
+                node_info_arr.append([t_id, node_info, diff])
+            res.append([name, node_info_arr])
+        return res
+
     def _calc_node_name_diff(self, name, node_info):
-        if node_info.node_type == node_types[0]:
-            return "unk"
-        if node_info.node_type != node_types[2]:
+        if node_info.node_type != node_types[2] and node_info.node_type != node_types[3]:
             return "unk"
         new_name = node_info.node_name
         num1 = name.split("_")[-1]
@@ -208,9 +235,24 @@ class Worker(object):
             res.append([name, pre_diff])
         return res
 
+    def get_tail_out_info(self):
+        beg_idx = LAY_BEG_IDX + self.layers * LAY_OPS
+        sub_arr = self.seqs[beg_idx:]
+        res = []
+        for i, elem in enumerate(sub_arr):
+            name, node_info = elem
+            outputs = node_info['outputs']
+            pre_elem = self.seqs[beg_idx + i - 1]
+            pre_node_info = pre_elem[1]
+            pre_outputs = pre_node_info['outputs']
+            pre_diff = _calc_diff(list(outputs.keys()),
+                                  list(pre_outputs.keys()))
+            res.append([name, pre_diff])
+        return res
+
     def print_special(self):
         print("the special info about this info is: ")
-        print(" @@@ " *  20)
+        print(" @@@ " * 20)
         print(f"layers num is: {self.layers}")
         print(f"smallest out tenor_id is: {self.begin_tensor}")
         print(f"largest out tensor id is: {self.lg_out_tensor}")
@@ -221,8 +263,7 @@ class Worker(object):
         print(self.out_diff)
         print(f'following is in_diff info')
         print(self.in_diff)
-        print(" @@@ " *  20)
-
+        print(" @@@ " * 20)
 
     def get_a_layer(self, layer_idx, need_norm=False):
         beg_idx = LAY_BEG_IDX + layer_idx * LAY_OPS
@@ -230,6 +271,56 @@ class Worker(object):
         if need_norm:
             self._norm_seqs(sub_arr)
         return sub_arr
+
+    def get_tail_layer(self, need_norm=False):
+        beg_idx = LAY_BEG_IDX + self.layers * LAY_OPS
+        sub_arr = self.seqs[beg_idx:]
+        if need_norm:
+            self._norm_seqs(sub_arr)
+        return sub_arr
+
+    def increase_once(self):
+        # first norm_seqs
+        self._norm_seqs(self.seqs)
+        # generate a layer
+        new_layer = self.generate_a_layer(self.layers-1)
+        # update layer info and layers
+        last_idx = LAY_BEG_IDX + self.layers * LAY_OPS
+        new_seqs = self.seqs[0:last_idx]
+        new_seqs.extend(new_layer)
+        new_seqs.extend(self.seqs[last_idx:])
+        self.seqs = new_seqs
+        self.layers += 1
+        # generate  tail
+        new_tail = self.generate_tail()
+        # update tail to seqs
+        beg_idx = LAY_BEG_IDX + self.layers * LAY_OPS
+        for i, elem in enumerate(new_tail):
+            self.seqs[beg_idx+i] = elem
+        self._update_specs()
+        # convert specical tokens back
+        self.post_process()
+        self._update_map_info()
+
+    def increase_n_layers(self, n):
+        for i in range(n):
+            self.increase_once()
+
+    def post_process(self):
+        # unk_types = ['smaller_unk', 'larger_unk', 'weight_unk', 'unk_unk']
+        cnt = 0
+        initial_val =  self.lg_out_tensor + 2
+        for elem in self.seqs:
+            node_info = elem[1]
+            inputs = node_info['inputs']
+            new_inputs = {}
+            for key, val in inputs.items():
+                new_key = key
+                if unk_types[1] in key:
+                    new_key = str(initial_val + cnt)
+                    cnt += 1
+                new_inputs[new_key] = val
+            node_info['inputs'] = new_inputs
 
     def generate_a_layer(self, last_layer_num, need_norm=False):
         # deep_copy last_layer_info
@@ -324,6 +415,86 @@ class Worker(object):
                 n_inputs[new_key] = val
             node_info['inputs'] = n_inputs
 
+    def generate_tail(self, need_norm=False):
+        # deep_copy last_layer_info
+        beg_idx = LAY_BEG_IDX + self.layers * LAY_OPS
+        sub_arr = self.seqs[beg_idx:]
+        if need_norm:
+            self._norm_seqs(sub_arr)
+        new_arr = copy.deepcopy(sub_arr)
+        # modify each elem, based on sub_arr , and new_arr
+        for i, elem in enumerate(new_arr):
+            new_elem = self._modify_tail_elem(elem, i, new_arr, beg_idx)
+            new_arr[i] = new_elem
+        return new_arr
+
+    def _modify_tail_elem(self, elem, i, new_arr, beg_idx):
+        n_name, n_info = elem
+        # update node name
+        if i == 0:
+            pre_elem = self.seqs[beg_idx-1]
+        else:
+            pre_elem = new_arr[i - 1]
+        pre_name = pre_elem[0]
+        n_name_arr = n_name.split("_")
+        n_num = int(pre_name.split("_")[-1]) + 1
+        prefix_arr = n_name_arr[:-1]
+        prefix_arr.append(str(n_num))
+        new_name = "_".join(prefix_arr)
+        # update input tensor
+        self._update_tail_input_tensor(n_info, i, new_arr, beg_idx)
+        # update output tensor
+        self._update_tail_output_tensor(n_info, i, new_arr, beg_idx)
+        return [new_name, n_info]
+
+    def _update_tail_input_tensor(self, node_info, i, new_arr, beg_idx):
+        # node_types = ['unk', 'emb_node', 'layer_node', 'tail_node']
+        inputs = node_info['inputs']
+        res = {}
+        cnt = 0
+        for t_id, val in inputs.items():
+            new_t_id = t_id
+            node_type = self.get_tensor_type(t_id)
+            # 当tensor 是layer_node 的输出时， 需要依据差值计算出是那个layer_node的输出
+            if node_type == node_types[2] or node_type == node_types[3]:
+                diff_arr = self.tail_in_diff[i]
+                diff_num = diff_arr[cnt]
+                cnt += 1
+                pre_elem_idx = i - diff_num
+                pre_elem = None
+                if pre_elem_idx < 0:
+                    pre_elem = self.seqs[beg_idx + pre_elem_idx]
+                else:
+                    pre_elem = new_arr[pre_elem_idx]
+                new_t_id = list(pre_elem[1]['outputs'].keys())[0]
+            res[new_t_id] = val
+        node_info['inputs'] = res
+
+    def _update_tail_output_tensor(self, node_info, i, new_arr, beg_idx):
+        outputs = node_info['outputs']
+        res = {}
+        for t_id, val in outputs.items():
+            pre_idx = i - 1
+            if pre_idx < 0:
+                pre_elem = self.seqs[beg_idx+pre_idx]
+            else:
+                pre_elem = new_arr[pre_idx]
+            new_t_id = t_id
+            if t_id.isnumeric():
+                diff_num = self.out_diff[i]
+                pre_t_id = list(pre_elem[1]['outputs'].keys())[0]
+                pre_t_id = int(pre_t_id)
+                new_t_id = str(pre_t_id + diff_num)
+            res[new_t_id] = val
+        node_info['outputs'] = res
+
+    def save_json(self, out_file):
+        _dict = OrderedDict()
+        for name, node_info in self.seqs:
+            _dict[name] = node_info
+        with open(out_file, 'w') as out_:
+            json.dump(_dict, out_)
+
 
 def _calc_diff(l1, l2):
     s1 = sorted(l1)
@@ -397,6 +568,18 @@ def inspect_out_diff(worker, layer_idx):
     print_arr(info_arr)
 
 
+def inspect_tail_input_info(worker, layers):
+    info_arr = worker.get_tail_input_info()
+    print("following is tail info")
+    print_arr(info_arr)
+
+
+def inspect_tail_output_info(worker, layers):
+    info_arr = worker.get_tail_out_info()
+    print("following is tail out info")
+    print_arr(info_arr)
+
+
 def print_arr(arr):
     for i, elem in enumerate(arr):
         print("***" * 30)
@@ -410,12 +593,12 @@ def test(args):
     in_path = args.input
     layers = args.f_ls
     t_worker = Worker(in_path, layers)
-    for l_num in range(1, layers):
-        print("***" * 30)
-        print(f"info for layer is {l_num} ")
-        l_info_arr = t_worker.get_layer_info(l_num)
-        for l_info in l_info_arr:
-            print(l_info)
+    # for l_num in range(1, layers):
+    #     print("***" * 30)
+    #     print(f"info for layer is {l_num} ")
+    #     l_info_arr = t_worker.get_layer_info(l_num)
+    #     for l_info in l_info_arr:
+    #         print(l_info)
     # t_worker.print_special()
     # diff_arr_var, var_sum = inspect_out_diff_var(t_worker, layers)
     # print_arr(diff_arr_var)
@@ -424,10 +607,17 @@ def test(args):
     # in_arr_var, in_var_sum = inspect_in_diff_var(t_worker, layers)
     # print_arr(in_arr_var)
     # print(f"in diff var sum is: {in_var_sum}")
-    print("now compare generated and non_generated")
-    generated_layer = t_worker.generate_a_layer(layers - 2, need_norm=True)
-    org_layer = t_worker.get_a_layer(layers - 1, need_norm=True)
-    print_arr(zip(org_layer, generated_layer))
+    # print("now compare generated and non_generated")
+    # generated_layer = t_worker.generate_a_layer(layers - 2, need_norm=True)
+    # org_layer = t_worker.get_a_layer(layers - 1, need_norm=True)
+    # print_arr(zip(org_layer, generated_layer))
+    # inspect_tail_input_info(t_worker, layers)
+    # inspect_tail_output_info(t_worker, layers)
+    # org_tail = t_worker.get_tail_layer(need_norm=True)
+    # gen_tail = t_worker.generate_tail(True)
+    # print_arr(zip(org_tail, gen_tail))
+    t_worker.increase_n_layers(args.add_num)
+    t_worker.save_json(args.output)
 
 
 if __name__ == '__main__':
@@ -437,7 +627,8 @@ if __name__ == '__main__':
     parser.add_argument('-l1', '--f_ls', type=int, help="the first layers")
     parser.add_argument('-l2', '--f_ls2', type=int, help="the second layers")
     parser.add_argument('-n', '--num', type=int, default=48)
-    parser.add_argument('-o', '--output', type=str, help='save the diff result')
+    parser.add_argument('-o', '--output', type=str, help='save the result')
+    parser.add_argument('--add_num', type=int, default=48)
     args = parser.parse_args()
     test(args)
 
