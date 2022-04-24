@@ -2,6 +2,14 @@
 
 """
 本文件主要封住用来执行命令行的工具
+call is blocking:
+
+call('notepad.exe')
+print('hello')  # only executed when notepad is closed
+Popen is non-blocking:
+
+Popen('notepad.exe')
+print('hello')  # immediately executed
 """
 
 import subprocess

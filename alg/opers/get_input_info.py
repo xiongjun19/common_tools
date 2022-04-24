@@ -62,13 +62,16 @@ class Worker(object):
         self.layers = layers
         self.node_map = self._cons_node_map()
         self.tensor_map = self._cons_tensor_map()
+        self.nid_2_tensor = self._cons_nid_2_tensor()
         self.begin_tensor = self._get_begin_tensor()
         self.lg_out_tensor = self._get_largest_out()
         self.t_unk_map = self._cons_t_unk_map()
+        # import ipdb; ipdb.set_trace()
         out_diff = self.get_layer_out_info(1)
         self.out_diff = [int(x[1][0]) for x in out_diff]
-        in_diff = self.get_layer_info(1)
+        in_diff, out_idx_arr = self.get_layer_info(1)
         self.in_diff = [[int(x[-1]) for x in y[1] if x[-1].isnumeric()] for y in in_diff]
+        self.in_out_idx_arr = out_idx_arr
         tail_out_diff = self.get_tail_out_info()
         self.tail_out_diff = [int(x[1][0]) for x in tail_out_diff if x[1][0].isnumeric()]
         tail_in_diff = self.get_tail_input_info()
@@ -82,6 +85,7 @@ class Worker(object):
         self.node_map = self._cons_node_map()
         self.tensor_map = self._cons_tensor_map()
         self.t_unk_map = self._cons_t_unk_map()
+        self.nid_2_tensor = self._cons_nid_2_tensor()
 
     def _get_begin_tensor(self):
         out_arr = list(self.seqs[0][1]['outputs'].keys())
@@ -106,7 +110,19 @@ class Worker(object):
         for node_name, node_info in self.seqs:
             outputs = node_info['outputs']
             for key in outputs.keys():
+                if key in res:
+                    print("already output by other node ?")
                 res[key] = TensorInfo(key, node_name)
+        return res
+
+    def _cons_nid_2_tensor(self):
+        """
+        用来构建node_id 到其所有输出tensor_id的map
+        """
+        res = {}
+        for node_name, node_info in self.seqs:
+            outputs = node_info['outputs']
+            res[node_name] = list(sorted(outputs.keys()))
         return res
 
     def _cons_t_unk_map(self):
@@ -184,16 +200,23 @@ class Worker(object):
         beg_idx = LAY_BEG_IDX + l_num * LAY_OPS
         sub_arr = self.seqs[beg_idx:beg_idx + LAY_OPS]
         res = []
+        res_out_idx = []
         for name, node_info in sub_arr:
             input_ids = node_info['inputs']
             node_info_arr = []
+            out_idx_arr = []
             for t_id in input_ids.keys():
                 ts_info = self._get_ts_info(t_id)
                 node_info = self._get_n_ds(ts_info.node_name)
                 diff = self._calc_node_name_diff(name, node_info)
                 node_info_arr.append([t_id, node_info, diff])
+                if node_info.node_name in self.nid_2_tensor and t_id.isnumeric():
+                    prev_out_tensor_arr = self.nid_2_tensor.get(node_info.node_name)
+                    out_idx = prev_out_tensor_arr.index(t_id)
+                    out_idx_arr.append(out_idx)
             res.append([name, node_info_arr])
-        return res
+            res_out_idx.append(out_idx_arr)
+        return res, res_out_idx
 
     def get_tail_input_info(self):
         beg_idx = LAY_BEG_IDX + self.layers * LAY_OPS
@@ -362,10 +385,11 @@ class Worker(object):
             # 当tensor 是layer_node 的输出时， 需要依据差值计算出是那个layer_node的输出
             if node_type == node_types[2]:
                 diff_arr = self.in_diff[i]
+                idx_arr = self.in_out_idx_arr[i]
                 diff_num = diff_arr[cnt]
+                idx_num = idx_arr[cnt]
                 cnt += 1
                 pre_elem_idx = i - diff_num
-                # import ipdb; ipdb.set_trace()
                 pre_elem = None
                 if pre_elem_idx < 0:
                     pre_elem = sub_arr[pre_elem_idx]
@@ -373,7 +397,7 @@ class Worker(object):
                     pre_elem = new_arr[pre_elem_idx]
                 if pre_elem is None:
                     import ipdb; ipdb.set_trace()
-                new_t_id = list(pre_elem[1]['outputs'].keys())[0]
+                new_t_id = list(pre_elem[1]['outputs'].keys())[idx_num]
             # 当tensor 是unk, 并且是weight_unk的时候， 需要依据模型的的layer 来更改tensor_id
             # unk_types = ['smaller_unk', 'larger_unk', 'weight_unk', 'unk_unk']
             elif node_type == node_types[0]:
@@ -388,18 +412,29 @@ class Worker(object):
     def _update_layer_output_tensor(self, node_info, i, new_arr, sub_arr, layer_idx):
         outputs = node_info['outputs']
         res = {}
-        for t_id, val in outputs.items():
-            pre_idx = i - 1
-            if pre_idx < 0:
-                pre_elem = sub_arr[pre_idx]
-            else:
-                pre_elem = new_arr[pre_idx]
-            diff_num = self.out_diff[i]
-            pre_t_id = list(pre_elem[1]['outputs'].keys())[0]
-            pre_t_id = int(pre_t_id)
-            new_t_id = str(pre_t_id + diff_num)
-            res[new_t_id] = val
+        out_arr = list(sorted(outputs.items(), key=lambda x: x[0]))
+        t_id, val = out_arr[0]
+        new_t_id = self._update_output_by_prev_out(i, new_arr, sub_arr, res, val)
+        if len(out_arr) > 1:
+            for i in range(1, len(out_arr)):
+                cur_t_id, cur_val = out_arr[i]
+                diff = int(cur_t_id) - int(t_id)
+                cur_new_t_id = str(int(new_t_id) + diff)
+                res[cur_new_t_id] = cur_val
         node_info['outputs'] = res
+
+    def _update_output_by_prev_out(self, i, new_arr, sub_arr, tmp_dict, val):
+        pre_idx = i - 1
+        if pre_idx < 0:
+            pre_elem = sub_arr[pre_idx]
+        else:
+            pre_elem = new_arr[pre_idx]
+        diff_num = self.out_diff[i]
+        pre_t_id = sorted(list(pre_elem[1]['outputs'].keys()))[0]
+        pre_t_id = int(pre_t_id)
+        new_t_id = str(pre_t_id + diff_num)
+        tmp_dict[new_t_id] = val
+        return new_t_id
 
     def _norm_seqs(self, seqs):
         cnt = 0
@@ -549,7 +584,6 @@ def inspect_in_diff_var(worker, layers):
         layer_elem_arr = in_layer_arr[i-1]
         cur_res = []
         for elem1, elem2 in zip(layer_elem_arr2, layer_elem_arr):
-            # import ipdb; ipdb.set_trace()
             n1, diff_arr1 = elem1
             diff_arr1 = [x[-1] for x in diff_arr1]
             n2, diff_arr2 = elem2
