@@ -38,5 +38,6 @@ def get_all_layers(net):
 
 get_all_layers(net)
 out = net(torch.randn(1, 3, 8, 8))
+import ipdb; ipdb.set_trace()
 print(visualisation)
 
