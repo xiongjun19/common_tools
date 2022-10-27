@@ -37,6 +37,23 @@ def store_gradient_info(grad_res_dict, model):
                 grad_res_dict[n].append(p.grad.abs().mean().cpu().item())
 
 
+def calc_wei_dist(model, pre_wei_dict, wei_dis_dict):
+    named_paras = model.named_parameters()
+    for n, p in named_paras:
+        if p.requires_grad:
+            if n in pre_wei_dict:
+                dis_ = (p.data - pre_wei_dict[n]).norm().cpu().item()
+                if n not in wei_dis_dict:
+                    wei_dis_dict[n] = []
+                wei_dis_dict[n].append(dis_)
+            pre_wei_dict[n] = p.data.clone()
+
+
+def save_to_wb(info_dict, wb, suffix='_suffix'):
+    for key, val_arr  in info_dict.items():
+        for val in val_arr:
+            wb.log({f'{key}_grad': val})
+
 
 inp = torch.randn(1, 3, 8, 8)
 out = net(inp)
