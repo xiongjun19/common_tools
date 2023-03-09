@@ -28,7 +28,8 @@ def exe_cmd_sync(cmd_line):
     subprocess.call(cmd_args)
 
 
-def exe_cmd_raw(cmd_line):   """
+def exe_cmd_raw(cmd_line):
+    """
     :param
     """
     Popen(cmd_line, shell=True)
