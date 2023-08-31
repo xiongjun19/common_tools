@@ -135,36 +135,6 @@ class Custom3DMatSelect(Function):
         return new_res, None, None, None
 
 
-def naive_grad():
-    """ naive test for calc gradient"""
-    # x = torch.tensor([1.0, 2.0], requires_grad=True)
-    seed = 42
-    torch.manual_seed(seed)
-    np.random.seed(seed)
-    random.seed(seed)
-    r = 4
-    in_dim = 12
-    out_dim = 12
-    lora_A = nn.Parameter(torch.zeros((r, in_dim)))
-    lora_B = nn.Parameter(torch.zeros((out_dim, r)))
-    # nn.init.kaiming_uniform_(lora_A, a=math.sqrt(5))
-    # nn.init.kaiming_uniform_(lora_B, a=math.sqrt(37))
-    nn.init.ones_(lora_A)
-    nn.init.ones_(lora_B)
-
-    x = torch.randn([2, 3, 12])
-    y = torch.matmul(lora_B, lora_A)
-    y1 = torch.matmul(x, y)
-
-    z = y1[..., :3]
-    # z = y1
-    loss = 1 - torch.mean(z)
-    loss.backward()
-    print("lora_A's grad", lora_A.grad)
-    print("lora_B's grad", lora_B.grad)
-
-
-
 if __name__ == '__main__':
     # naive_grad()
     print("the naive result: ")
@@ -180,6 +150,5 @@ if __name__ == '__main__':
     print("*" * 36) 
     print("cus_seledt test")
     s_cg = cus_mm_select()
-
 
 
