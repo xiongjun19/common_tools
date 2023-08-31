@@ -2,6 +2,7 @@
 
 import os
 import shutil
+from pathlib import Path
 
 
 def mk_data_folder():
@@ -95,6 +96,15 @@ def get_dir(f_path):
     :return:
     """
     return os.path.dirname(f_path)
+
+
+def iter_dir(in_dir, pat='*'):
+    res = list()
+    path = Path(in_dir)
+    for p in path.rglob(pat):
+        res.append(p)
+        # print(p.name)
+    return res
 
 
 if __name__ == "__main__":
