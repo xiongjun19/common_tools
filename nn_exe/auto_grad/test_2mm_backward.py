@@ -120,8 +120,8 @@ def cus_s_2mm_grad(begin, end):
     r = 2
     in_dim = 4
     out_dim = 4
-    lora_A = nn.Parameter(torch.ones((r, in_dim)))
-    lora_B = nn.Parameter(torch.ones((out_dim, r)))
+    lora_A = nn.Parameter(torch.ones((r, out_dim)))
+    lora_B = nn.Parameter(torch.ones((in_dim, r)))
     # nn.init.kaiming_uniform_(lora_A, a=math.sqrt(5))
     nn.init.kaiming_uniform_(lora_A, a=math.sqrt(5))
     nn.init.kaiming_uniform_(lora_B, a=math.sqrt(7))
