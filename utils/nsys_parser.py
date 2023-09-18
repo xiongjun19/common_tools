@@ -62,12 +62,22 @@ def exec_and_parse(cursor, sql):
 def test(f_path, device=0):
     res = do_parse(f_path, device)
     print(res)
+    return res
+
+
+def main(f_path, device_arr):
+    for device in device_arr:
+        res = do_parse(f_path, device)
+        tot_time, utilization, nccl_ratio, mem_ratio = res
+        print(f'Info at GPU{device}: utilization: {utilization}; nccl_ratio: {nccl_ratio}; mem_ratio: {mem_ratio}')
 
 
 if __name__ == '__main__':
     import sys
-    device_num = 0
+    device_num = 1
     t_path = sys.argv[1]
     if len(sys.argv) > 2:
-        device_num = sys.argv[2]
-    test(t_path, device_num)
+        device_num = int(sys.argv[2])
+    device_arr = range(device_num)
+    main(t_path, device_arr)
+
