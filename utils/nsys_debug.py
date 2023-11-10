@@ -29,6 +29,7 @@ def _parse_kernel(cursor, device=0):
     ker_time = exec_and_parse(cursor, sql)
     sql = f"select sum(end - start) from CUPTI_ACTIVITY_KIND_KERNEL where deviceId={device} AND Shortname in (select id from StringIds where  value like '%nccl%');"
     nccl_time = exec_and_parse(cursor, sql)
+    print(f"ker_time @gpu {device} is: {ker_time}, nccl_time: {nccl_time}, pure_ker: {ker_time - nccl_time}")
     return ker_time, nccl_time
 
 
