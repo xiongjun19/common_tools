@@ -8,7 +8,7 @@ from openpyxl import Workbook
 
 def main(input_path, output_path):
     if output_path is None:
-        output_path = input_path.strip(".xlsx") + "_res.xlsx"
+        output_path = input_path.rstrip(".xlsx") + "_res.xlsx"
     items = _read_input(input_path)
     res = compute_res(items)
     save_res(res, output_path)
@@ -60,6 +60,8 @@ def _compute_impl(item):
     new_item['tot_time'] = comp_time + buble_time + pp_time + \
                            dp_time + tp_comm_time
     new_item['tot_gpu_num'] = item['TP'] * item['PP'] * item['DP']
+    new_item['TGS'] = item['global_batch_size'] * item['seq_len'] * 1000 / \
+                      (new_item['tot_time'] * new_item['tot_gpu_num'])
     return new_item
 
 
