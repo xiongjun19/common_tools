@@ -6,3 +6,9 @@ __pycache__
 /__pycache__/*
 test_not_commit
 test_not_commit/*
+*/.DS_Store
+.DS_Store
+dat2
+dats
+dat32
+dat_t_comp

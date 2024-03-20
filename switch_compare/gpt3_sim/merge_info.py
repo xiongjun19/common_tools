@@ -6,10 +6,10 @@ import openpyxl
 from openpyxl import Workbook
 
 
-def main(in_file, comm_file, res_file):
+def main(in_file, comm_file, res_file, topo_num=5):
     input_items = _read_in_file(in_file)
     comm_items = _read_in_file(comm_file)
-    res = _merge_info(input_items, comm_items)
+    res = _merge_info(input_items, comm_items, topo_num)
     save_res(res, res_file)
     pass
 
@@ -20,14 +20,16 @@ def _read_in_file(in_file):
     return _dict
 
 
-def _merge_info(input_items, comm_items):
+def _merge_info(input_items, comm_items, topo_num):
     res = []
-    for topo in range(1, 4):
+    for topo in range(1, topo_num + 1):
         for item in input_items:
             new_item = item.copy()
             tp_time = _get_tp_lat(new_item, comm_items, topo)
             pp_time = _get_pp_lat(new_item, comm_items, topo)
-            dp_time = _get_pp_lat(new_item, comm_items, topo)
+            dp_time = _get_dp_lat(new_item, comm_items, topo)
+            if tp_time is None or new_item['tot_time'] is None:
+                continue
             overall_time = tp_time + pp_time + dp_time + new_item['tot_time']
             new_item['overall_time'] = overall_time
             new_item['tp_comm_time'] = tp_time
@@ -78,6 +80,7 @@ if __name__ == '__main__':
     parser.add_argument('-i', '--input', type=str, help='the input file')
     parser.add_argument('-c', '--comm_file', type=str, help='the input file')
     parser.add_argument('-o', '--output', type=str, help='the output_file')
+    parser.add_argument('-t', '--topo_num', type=int, help='the number of topos')
     args = parser.parse_args()
-    main(args.input, args.comm_file, args.output)
+    main(args.input, args.comm_file, args.output, args.topo_num)
 

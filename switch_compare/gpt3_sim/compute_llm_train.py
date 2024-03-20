@@ -1,17 +1,22 @@
 # coding=utf8
 
+
 import argparse
 import pandas as pd
 import openpyxl
 from openpyxl import Workbook
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import numpy as np
 
 
-def main(input_path, output_path):
+def main(input_path, output_path, is_vis):
     if output_path is None:
         output_path = input_path.strip(".xlsx") + "_res.xlsx"
     items = _read_input(input_path)
     res = compute_res(items)
-    save_res(res, output_path)
+    save_res(res, output_path, is_vis)
 
 
 def _read_input(input_path):
@@ -127,15 +132,83 @@ def calc_micro_comp_flops(micro_batch, seq, h_dim, act_layers):
     return res
 
 
-def save_res(res, output_path):
+def save_res(res, output_path, is_vis):
     df = pd.DataFrame.from_records(res)
+    # import ipdb; ipdb.set_trace()
+    if is_vis:
+        _visual_res(df, output_path)
     df.T.to_excel(output_path)
+    # df.to_csv(output_path, index=False)
+
+
+def _visual_res(df, out_file):
+    df['parallel_strategy'] = df['TP'].astype(str) + "_" + \
+            df["PP"].astype(str) + "_" + df["DP"].astype(str) + "_" + \
+            df["topo"].astype(str)
+    seq_len_arr = [2048, 4096, 8192, 32768]
+    global_bs_arr = [16, 32, 128, 64, 512, 2048, 1344, 2688]
+    for glob_bs in global_bs_arr:
+        for seq_len in seq_len_arr:
+            out_path = out_file + f"seq_len-{seq_len}_glob_bs-{glob_bs}.png"
+            vis_impl(df, seq_len, glob_bs, out_path)
+            out_path = out_file + f"seq_len-{seq_len}_glob_bs-{glob_bs}_stacked.png"
+            vis_stack_bar(df, seq_len, glob_bs, out_path)
+
+
+def vis_impl(df, seq_length, batch_size, out_path):
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.rcParams['axes.unicode_minus'] = False
+    title = f'seq_length: {seq_length}, glob_batch_size: {batch_size}'
+    filter_df = df[df.seq_len == seq_length]
+    filter_df = filter_df[filter_df.global_batch_size == batch_size]
+    if len(filter_df) <= 0:
+        return
+    filter_df['normalized_ratio'] = filter_df['tot_time'] / (filter_df['tot_time'].iloc[0])
+    filter_df['norm_performance'] = 1 / filter_df['normalized_ratio']
+    barplot = sns.barplot(data=filter_df, x="parallel_strategy", y="norm_performance")
+    for i, p in enumerate(barplot.patches):
+        bb = "%.0f%%" % (filter_df['norm_performance'].iloc[i] * 100)
+        barplot.annotate(bb,
+                         (p.get_x() + p.get_width() / 2., p.get_height()),
+                         ha='center', va='center',
+                         xytext=(0, 3),
+                         textcoords='offset points')
+
+    barplot.set_title(title)
+    plt.gca().set_xlabel('parallel strategy')
+    plt.gca().set_ylabel('norm performance')
+    plt.gca().tick_params(axis='y', which='both', length=0)
+    # lg = plt.legend(bbox_to_anchor=(1.02, 1), loc=2, borderaxespad=0.)
+    # lg.set_title('Topo_NO')
+    plt.xticks(rotation=45)
+    # plt.savefig(out_path)
+    plt.savefig(out_path, bbox_inches='tight')
+    plt.clf()
+
+
+def vis_stack_bar(df, seq_length, batch_size, out_path):
+    plt.rcParams['font.sans-serif'] = ['SimHei']
+    plt.rcParams['axes.unicode_minus'] = False
+    filter_df = df[df.seq_len == seq_length]
+    filter_df = filter_df[filter_df.global_batch_size == batch_size]
+    if len(filter_df) <= 0:
+        return
+    filter_df.set_index('parallel_strategy').plot(kind='bar', stacked=True,
+            y=["comp_time", "buble_time", "tp_comm_time", "pp_comm_time", "dp_comm_time"])
+    plt.legend(bbox_to_anchor=(1.05, 1), loc=2, borderaxespad=0.)
+    plt.xticks(rotation=45)
+    plt.savefig(out_path, bbox_inches='tight')
+    plt.clf()
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-i', '--input', type=str, help='the input file')
     parser.add_argument('-o', '--output', type=str, help='the output_file')
+    parser.add_argument('-v', '--visual_out', type=str, help='the output_file')
+    parser.add_argument('--is_vis', action='store_true', default=False, help="weather visulization")
     args = parser.parse_args()
-    main(args.input, args.output)
-
+    main(args.input, args.output, args.is_vis)
+    '''
+    python compute_llm_train.py -i dats/gpt3_train_175B.xlsx -o dats/gpt_175B_res.xlsx --is_vis
+    '''
