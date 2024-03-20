@@ -140,10 +140,10 @@ def _calc_pp_info(job):
     seq = job.train_cfg.seq_len
     h = job.model_cfg.hid_dim
     pp = job.train_cfg.pp
-    dtype=2
+    dtype = 2
     msg_size = dtype * bs * seq * h
     tp_bwd = job.sys_cfg.inter_bandwidth
-    pp_comm_time = 2 * (pp - 1)  * msg_size / tp_bwd / (1024 ** 3)
+    pp_comm_time = 2 * (pp - 1) * msg_size / tp_bwd / (1024 ** 3)
     return pp_comm_time
 
 
@@ -155,7 +155,7 @@ def _calc_dp_info(job):
     dp_weight = max(dtype * (voc * h), dtype * (h * h))
     pp = job.train_cfg.pp
     tp = job.train_cfg.tp
-    _data = dp_weight * dtype /(pp * tp)
+    _data = dp_weight * dtype / (pp * tp)
     comm = 2 * _data * (dp - 1) / dp
     dp_time = comm / job.sys_cfg.inter_bandwidth / (1024 ** 3)
     return dp_time
@@ -173,6 +173,7 @@ def save_res(res, output_path, is_vis):
 def _visual_res(df, out_file):
     df['parallel_strategy'] = df['TP'].astype(str) + "_" + \
             df["PP"].astype(str) + "_" + df["DP"].astype(str) + "_" + \
+            df["CP"].astype(str) + "_" + \
             df["topo"].astype(str)
     # seq_len_arr = [2048, 4096, 8192, 32768]
     seq_len_arr = set(df['seq_len'].tolist())
