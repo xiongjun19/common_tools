@@ -38,6 +38,7 @@ class TrainInfo:
     pp: int = 1
     dp: int = 1
     cp: int = 1
+    moe: int = 1
     pp_interleaved: bool = False
     pp_chunk_layers: int = 2
 
@@ -68,13 +69,16 @@ def _parse_job(item):
         item.get('hidden_dim'),
         item.get('ffn_dim'),
         item.get('voc', 50000),
-        item.get('moe_layers', 0),
-        item.get('MOE', 0),
-        item.get('selected_experts', 2)
+        item.get('moe_layers'),
+        item.get('experts'),
+        item.get('selected_experts', 1)
     )
     if mod_cfg.ffn_dim is None:
         if mod_cfg.hid_dim is not None:
             mod_cfg.ffn_dim = 4 * mod_cfg.hid_dim
+    if mod_cfg.experts is not None:
+        if mod_cfg.moe_layers is None:
+            mod_cfg.moe_layers = mod_cfg.layers
 
     sys_cfg = SysConfig(
         item.get('gpu_flops'),
@@ -96,6 +100,7 @@ def _parse_job(item):
         item.get('PP'),
         item.get('DP'),
         item.get('CP', 1),
+        item.get('MOE', 1),
         item.get('pp_interleaved', False),
         item.get('pp_chunk_layers', 2),
     )

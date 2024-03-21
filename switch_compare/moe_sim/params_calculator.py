@@ -23,7 +23,7 @@ def calc_gpt_moe_params(layer_num, hid_dim, moe_layer, experts, vocab_size=50000
 
 
 def calc_transformer_param(enc_num, dec_num, hid_dim, vocab_size=50000, ffn_mid=None):
-    enc_params = calc_gpt_params(enc_num, hid_dim,vocab_size, ffn_mid)
+    enc_params = calc_gpt_params(enc_num, hid_dim, vocab_size, ffn_mid)
     if ffn_mid is None:
         ffn_mid = 4 * hid_dim
     att_param = 4 * (hid_dim ** 2) * dec_num * 2
@@ -113,15 +113,16 @@ if __name__ == '__main__':
     print(params / 1e9)
 
 
-    hid = 12288
-    layers = 32 
+    hid = 10240
+    layers = 120
+    print('single model calc param ')
     params = calc_gpt_params(layers, hid, 32000)
     print(params / 1e9)
     print("now calc MOE experts ")
-    hid = 12288
-    layers = 32 
-    moe_layers = 32 
-    num_exp = 8
+    hid = 10240
+    layers = 120
+    moe_layers = 120
+    num_exp = 16 
     params = calc_gpt_moe_params(layers, hid, moe_layers, num_exp, 32000)
     print(params / 1e9)
 
