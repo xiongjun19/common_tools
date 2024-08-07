@@ -87,6 +87,20 @@ def calc_t5_param_moe(enc_num, dec_num, hid_dim,  moe_enc_num, moe_dec_num, expe
     return res
 
 
+def calc_llama_params(layer_num, hid_dim, vocab_size=50000, ffn_mid=None, kv_heads=None, head_dim=128):
+    q_v_params = 2 * (hid_dim ** 2) * layer_num
+    if kv_heads is None:
+        kv_heads = hid_dim // head_dim
+    kv_params = 2 * (hid_dim * kv_heads * head_dim) * layer_num
+    att_param = q_v_params + kv_params
+    if ffn_mid is None:
+        ffn_mid = 4 * hid_dim
+    ffn_param = 3 * hid_dim * ffn_mid * layer_num
+    lm_head_param = hid_dim * vocab_size
+    res = att_param + ffn_param + 2 * lm_head_param
+    return res
+
+
 if __name__ == '__main__':
     hid = 4096
     layers = 32
@@ -112,19 +126,42 @@ if __name__ == '__main__':
     params = calc_gpt_moe_params(layers, hid, moe_layers, num_exp, 32000)
     print(params / 1e9)
 
-
-    hid = 10240
-    layers = 120
+    hid = 40 * 128
+    layers = 8
     print('single model calc param ')
     params = calc_gpt_params(layers, hid, 32000)
     print(params / 1e9)
     print("now calc MOE experts ")
-    hid = 10240
-    layers = 120
-    moe_layers = 120
-    num_exp = 16 
+    hid = 40 * 128
+    layers = 8
+    moe_layers = layers
+    num_exp = 4
     params = calc_gpt_moe_params(layers, hid, moe_layers, num_exp, 32000)
     print(params / 1e9)
 
+    print("now calc llama3")
+    layers = 80
+    hid = 8192
+    ffn_dim = 12288
+    kv_heads = 8
+    voc = 128000
+    params = calc_llama_params(layers, hid, voc, ffn_dim, kv_heads)
+    print(params / 1e9)
+    print("now calc llama3")
+    layers = 126 
+    hid = 16384
+    ffn_dim = 53284
+    kv_heads = 8 
+    voc = 128000
+    params = calc_llama_params(layers, hid, voc, ffn_dim, kv_heads)
+    print(params / 1e9)
+    print("now calc llama3")
+    layers = 32 
+    hid = 4096 
+    ffn_dim = 14336 
+    kv_heads = 8
+    voc = 128000
+    params = calc_llama_params(layers, hid, voc, ffn_dim, kv_heads)
+    print(params / 1e9)
 
 

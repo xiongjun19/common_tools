@@ -11,8 +11,8 @@ def do_parse(f_path, dev):
     kernel_time, nccl_time = _parse_kernel(cursor, dev)
     mem_time = _parse_mem(cursor, dev)
     utilization = (kernel_time - nccl_time) / tot_time
-    nccl_ratio = nccl_time / (1e-9 + kernel_time + mem_time)
-    mem_ratio = mem_time / (1e-9 + kernel_time + mem_time)
+    nccl_ratio = nccl_time / (1e-9 + tot_time)
+    mem_ratio = mem_time / (1e-9 + tot_time)
     cursor.close()
     mydb.close()
     return tot_time, utilization, nccl_ratio, mem_ratio

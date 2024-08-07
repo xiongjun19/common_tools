@@ -82,6 +82,36 @@ def _detail_id2mid(g_id, ch_id, b_id, chunks, m, pp, forward=True):
         return m_id
 
 
+def is_last_model_chunk(micro_id, chunks, m, pp):
+    if m < pp:
+        base = m
+        group_size = chunks * base
+        g_id = micro_id // group_size
+        b_id = micro_id % base
+        if b_id == base - 1:
+            return True
+        return False
+    else:
+        base = pp
+        group_size = chunks * base
+        max_num_groups = (m + pp) // pp
+        reg_tho = (max_num_groups - 1) * group_size
+        res_base = m % pp
+        g_id = micro_id // group_size
+        if res_base == 0:
+            max_num_groups -= 1
+            b_id = micro_id % group_size % base
+            return g_id == max_num_groups - 1 and b_id == base - 1
+        else:
+            base = res_base
+            if micro_id < reg_tho:
+                return False
+            micro_id = (micro_id - reg_tho)
+            b_id = micro_id % base
+            return b_id == base - 1
+
+
+
 if __name__ == '__main__':
     res_arr = []
     res_bwd_arr = []
@@ -103,7 +133,7 @@ if __name__ == '__main__':
     print("* " * 35)
     res_arr = []
     res_bwd_arr = []
-    m = 8
+    m = 8 
     chunks = 2
     for m_id in range(m * chunks):
         ch_id = _mid2detail_id(m_id, chunks, m, 3, forward=True)
@@ -120,6 +150,7 @@ if __name__ == '__main__':
     print("* " * 35)
     fwd_m_id = []
     bwd_m_id = []
+    last_chunk_state = []
     for i in range(len(res_arr)):
         g_id, ch_id, b_id = res_arr[i]
         m_id = _detail_id2mid(g_id, ch_id, b_id, chunks, m, 3)
@@ -127,6 +158,7 @@ if __name__ == '__main__':
         g_id, ch_id, b_id = res_bwd_arr[i]
         m_id = _detail_id2mid(g_id, ch_id, b_id, chunks, m, 3, False)
         bwd_m_id.append(m_id)
+        last_chunk_state.append(is_last_model_chunk(i, chunks, m, 3))
 
     print("original_id: ")
     print(list(range(m * chunks)))
@@ -134,4 +166,6 @@ if __name__ == '__main__':
     print(fwd_m_id)
     print("bwd_m_id: ")
     print(bwd_m_id)
+    print("last_chunk states: ")
+    print(last_chunk_state)
 
